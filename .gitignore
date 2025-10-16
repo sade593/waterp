@@ -1,0 +1,45 @@
+# Nuxt.js და Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Nuxt build outputs
+.nuxt/
+.output/
+.dist/
+.cache/
+build/
+temp/
+tmp/
+
+# VSCode, IDE, და სისტემური ფაილები
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Env ფაილები (არ ატვირთო მგრძნობიარე ინფორმაცია)
+.env
+.env.*
+!.env.example
+
+# ლოკალური server logs
+logs
+*.log
+
+# coverage ფაილები ტესტირებისთვის
+coverage/
+*.lcov
+
+# Docker
+docker-compose.override.yml
+
+# Misc
+*.local
+*.bak
+*.swp
