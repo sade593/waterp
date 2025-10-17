@@ -47,6 +47,9 @@
               <li><a href="#" class="text-gray-400 hover:text-white transition">პროექტები</a></li>
               <li><a href="#" class="text-gray-400 hover:text-white transition">ვაკანსიები</a></li>
               <li><a href="#" class="text-gray-400 hover:text-white transition">ტენდერები</a></li>
+              
+              
+
             </ul>
           </div>
 
