@@ -85,6 +85,12 @@
                 </NuxtLink>
               </li>
               <li class="mb-5">
+                <NuxtLink to="/company/director" class="flex items-center text-blue-800 hover:underline">
+                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
+                  <span>წყალმომარაგების კომპანიის ბიზნეს-გეგმა</span>
+                </NuxtLink>
+              </li>
+              <li class="mb-5">
                 <NuxtLink to="/company/personal" class="flex items-center text-blue-800 hover:underline">
                   <i class="fas fa-arrow-right mr-3 text-sm"></i>
                   <span>პერსონალურ მონაცემთა დაცვის ოფიცერი</span>

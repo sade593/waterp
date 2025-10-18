@@ -48,6 +48,35 @@
                   <span>მოადგილეები</span>
                 </NuxtLink>
               </li>
+              <li class="mb-5">
+                <NuxtLink to="/company/vacancies" class="flex items-center text-blue-800 hover:underline">
+                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
+                  <span>ვაკანსია</span>
+                </NuxtLink>
+              </li>
+              <li class="mb-5">
+                <NuxtLink to="/company/deputies" class="flex items-center text-blue-800 hover:underline">
+                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
+                  <span>აუდირებული ფინანსური ანგარიშება</span>
+                </NuxtLink>
+              </li>
+              <li class="mb-5">
+                <NuxtLink to="/company/buisness-plan" class="flex items-center text-blue-800 hover:underline">
+                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
+                  <span>წყალმომარაგების კომპანიის ბიზნეს-გეგმა</span>
+                </NuxtLink>
+              </li>
+              <li class="mb-5">
+                <NuxtLink to="/company/deputies" class="flex items-center text-blue-800 hover:underline">
+                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
+                  <span>პერსონალური მონაცემების დაცვის ოფიცერი</span>
+                </NuxtLink>
+              </li><li class="mb-5">
+                <NuxtLink to="/company/deputies" class="flex items-center text-blue-800 hover:underline">
+                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
+                  <span>ხარისხის მართვის პოლიტიკა</span>
+                </NuxtLink>
+              </li>
               
               </ul>
           </div>

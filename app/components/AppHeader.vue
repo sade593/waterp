@@ -42,10 +42,11 @@
               <NuxtLink to="/company/director" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">დირექტორი</NuxtLink>
               <NuxtLink to="/company/about" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">კომპანია</NuxtLink>
               <NuxtLink to="/company/deputies" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">მოადგილეები</NuxtLink>
-              <!--<NuxtLink to="/company/vacancies" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ვაკანსია</NuxtLink>
+              <NuxtLink to="/company/vacancies" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ვაკანსია</NuxtLink>
               <NuxtLink to="/company/audit" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">აუდირებული ფინანსური ანგარიშება</NuxtLink>
+              <NuxtLink to="/company/buisness-plan" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">წყალმომარაგების კომპანიის ბიზნეს-გეგმა</NuxtLink>
               <NuxtLink to="/company/personal" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">პერსონალური მონაცემების დაცვის ოფიცერი</NuxtLink>
-              <NuxtLink to="/company/quality" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ხარისხის მართვის პოლიტიკა</NuxtLink>-->
+              <NuxtLink to="/company/quality" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ხარისხის მართვის პოლიტიკა</NuxtLink>
             </div>
           </div>
           

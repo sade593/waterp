@@ -5,12 +5,14 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <!-- Column 1 -->
           <div>
-            <div class="mb-4" style="height: 50px;">
-              <img src="../assets/img/wlogo.png"
-                   alt="საქართველოს გაერთიანებული წყალმომარაგების კომპანია"
-                   class="h-full w-auto"
-                   >
-            </div>
+            
+        <NuxtLink to="/">
+          <img 
+            src="/wlogo.png" 
+            alt="Company Logo"
+            class="h-14 w-auto"
+          >
+        </NuxtLink>
             <p class="text-gray-400 text-sm mb-4">
               საქართველოს გაერთიანებული წყალმომარაგების კომპანია -
               ვზრუნავთ სუფთა წყლის მიწოდებაზე.
