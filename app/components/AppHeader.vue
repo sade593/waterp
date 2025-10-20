@@ -57,7 +57,7 @@
             </button>
             <div class="absolute top-full mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-30">
               <NuxtLink to="/media/photos" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ფოტო გალერია</NuxtLink>
-              <NuxtLink to="/media/video" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ვიდეო გალერია</NuxtLink>
+              <NuxtLink to="/media/videos" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ვიდეო გალერია</NuxtLink>
               <NuxtLink to="/media/publications" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">პუბლიკაციები გალერია</NuxtLink>
             </div>
           </div>
