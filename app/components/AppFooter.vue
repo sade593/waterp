@@ -69,7 +69,7 @@
               </li>
               <li class="flex items-start">
                 <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
-                თბილისი, ვაჟა-ფშაველას 76
+                თბილისი, ანა პოლიტკოსვკაიას 5
               </li>
             </ul>
           </div>
