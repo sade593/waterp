@@ -20,7 +20,8 @@
     </div>
 
     <header class="bg-white shadow-sm sticky top-0 z-50">
-      <div class="container mx-auto px-4 flex justify-between items-center py-4">
+      
+<div class="w-full px-8 flex justify-between items-center py-4">
 
         <NuxtLink to="/">
           <img
@@ -68,10 +69,9 @@
             @mouseleave="projectsOpen = false"
           >
             <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
-              {{ projectsNav.text }}
+              პროექტები
               <i class="fas fa-chevron-down ml-1 text-xs"></i>
             </button>
-
             <div
               v-if="projectsOpen"
               class="absolute top-full mt-2 w-72 bg-white rounded-lg shadow-lg z-30 border border-gray-200"
@@ -88,15 +88,14 @@
                 >
                   <NuxtLink
                     :to="child.to"
-                    class="px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition flex justify-between items-center"
+                    class="flex px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition justify-between items-center"
                   >
                     <span>{{ child.text }}</span>
                     <i v-if="child.children" class="fas fa-chevron-right ml-2 text-xs text-gray-400"></i>
                   </NuxtLink>
-
                   <div
                     v-if="child.children && openSubmenu === child.text"
-                    class="absolute left-full -top-px mt-0 w-72 bg-white rounded-r-lg shadow-lg z-40 border border-gray-200"
+                    class="absolute left-full top-0 w-72 bg-white rounded-r-lg shadow-lg z-40 border border-gray-200"
                   >
                     <ul>
                       <li v-for="grandchild in child.children" :key="grandchild.text">
@@ -113,9 +112,98 @@
               </ul>
             </div>
           </div>
+
           <NuxtLink to="/services" class="text-gray-700 hover:text-blue-800 font-medium transition">სერვისები</NuxtLink>
-          <NuxtLink to="/tenders" class="text-gray-700 hover:text-blue-800 font-medium transition">ტენდერები</NuxtLink>
-          <NuxtLink to="/legislation" class="text-gray-700 hover:text-blue-800 font-medium transition">კანონმდებლობა</NuxtLink>
+
+          <div
+            class="relative h-full flex items-center"
+            @mouseenter="tendersOpen = true"
+            @mouseleave="tendersOpen = false"
+          >
+            <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
+              {{ tendersNav.text }}
+              <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </button>
+            <div
+              v-if="tendersOpen"
+              class="absolute top-full mt-2 w-72 bg-white rounded-lg shadow-lg z-30 border border-gray-200"
+              @mouseenter="tendersOpen = true"
+              @mouseleave="tendersOpen = false"
+            >
+              <ul>
+                <li
+                  v-for="child in tendersNav.children"
+                  :key="child.text"
+                  class="relative"
+                  @mouseenter="openTendersSubmenu = child.text"
+                  @mouseleave="openTendersSubmenu = null"
+                >
+                  <NuxtLink
+                    :to="child.to"
+                    class="px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition flex justify-between items-center"
+                  >
+                    <span>{{ child.text }}</span>
+                    <i v-if="child.children" class="fas fa-chevron-right ml-2 text-xs text-gray-400"></i>
+                  </NuxtLink>
+                  <div
+                    v-if="child.children && openTendersSubmenu === child.text"
+                    class="absolute right-full top-0 w-72 bg-white rounded-l-lg shadow-lg z-40 border border-gray-200"
+                  >
+                    <ul>
+                      <li v-for="grandchild in child.children" :key="grandchild.text">
+                        <NuxtLink
+                          :to="grandchild.to"
+                          class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition"
+                        >
+                          {{ grandchild.text }}
+                        </NuxtLink>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="relative group h-full flex items-center"
+            @mouseenter="legislationOpen = true"
+            @mouseleave="legislationOpen = false"
+          >
+            <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
+              {{ legislationNav.text }}
+              <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </button>
+            <div
+              v-if="legislationOpen"
+              class="absolute top-full mt-2 w-96 bg-white rounded-lg shadow-lg z-30 border border-gray-200"
+              @mouseenter="legislationOpen = true"
+              @mouseleave="legislationOpen = false"
+            >
+              <ul>
+                <li v-for="item in legislationNav.children" :key="item.text">
+                  <a
+                    v-if="item.to.endsWith('.pdf')"
+                    :href="item.to"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition"
+                  >
+                    {{ item.text }}
+                  </a>
+                  <NuxtLink
+                    v-else
+                    :to="item.to"
+                    class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition"
+                  >
+                    {{ item.text }}
+                  </NuxtLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <NuxtLink to="/decree-announcements" class="text-gray-700 hover:text-blue-800 font-medium transition">დადგენილების საჯაროდ გამოცხადება</NuxtLink>
         </nav>
 
         <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="lg:hidden text-gray-600">
@@ -132,6 +220,7 @@
           <li class="border-t"><NuxtLink to="/services" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">სერვისები</NuxtLink></li>
           <li class="border-t"><NuxtLink to="/tenders" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">ტენდერები</NuxtLink></li>
           <li class="border-t"><NuxtLink to="/legislation" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">კანონმდებლობა</NuxtLink></li>
+          <li class="border-t"><NuxtLink to="/decree-announcements" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">დადგენილების საჯაროდ გამოცხადება</NuxtLink></li>
         </ul>
       </div>
     </header>
@@ -141,8 +230,13 @@
 <script setup>
 import { ref } from 'vue';
 import { projectsNav } from '../../data/projectsNavigation.js';
+import { tendersNav } from '../../data/tendersNavigation.js';
+import { legislationNav } from '../../data/legislationNavigation.js';
 
 const isMobileMenuOpen = ref(false);
 const projectsOpen = ref(false);
 const openSubmenu = ref(null);
+const tendersOpen = ref(false);
+const openTendersSubmenu = ref(null);
+const legislationOpen = ref(false);
 </script>
