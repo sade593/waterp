@@ -1,10 +1,10 @@
 <template>
-  <div v-if="deputy">
+  <div v-if="vacancy">
     
     <div class="bg-blue-800 text-white py-16">
       <div class="container mx-auto px-6 text-center">
-        <h1 class="text-4xl font-bold mb-4">{{ deputy.name }}</h1>
-        <p class="text-xl opacity-90">საქართველოს გაერთიანებული წყალმომარაგების კომპანიის მოადგილე</p>
+        <h1 class="text-4xl font-bold mb-4">{{ vacancy.title }}</h1>
+        <p class="text-xl opacity-90">{{ vacancy.department }} - {{ vacancy.location }}</p>
       </div>
     </div>
 
@@ -12,62 +12,54 @@
     <div class="bg-white py-8">
       <div class="container mx-auto px-6">
         <div class="flex flex-col lg:flex-row gap-8 -mt-16">
-          
+
           
           <main class="lg:w-2/3">
+            
             <div class="bg-gradient-to-r from-neutral-50 to-white rounded-xl shadow-lg border border-neutral-100 p-8 mb-8">
-              <div class="flex flex-col md:flex-row gap-8">
-                
-                <div class="md:w-64 flex-shrink-0">
-                  <img
-                    :src="deputy.image"
-                    :alt="deputy.name"
-                    class="rounded-lg shadow-md w-full"
-                  >
-                </div>
-                
-                
-                <div class="flex-1">
-                  <h2 class="text-3xl font-bold text-blue-800 mb-2">{{ deputy.name }}</h2>
-                  <div class="border-l-4 border-blue-800 pl-4 mb-6">
-                    <p class="text-lg text-gray-700 font-medium">
-                      {{ deputy.title }}
-                    </p>
-                  </div>
-                  
-                  
-                  <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                      <div class="flex items-center mb-2">
-                        <i class="fas fa-briefcase text-blue-600 mr-2"></i>
-                        <span class="font-semibold text-gray-700 text-sm">პოზიცია</span>
-                      </div>
-                      <p class="text-gray-800 font-medium">დირექტორის მოადგილე</p>
-                    </div>
-                    
-                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                      <div class="flex items-center mb-2">
-                        <i class="fas fa-building text-blue-600 mr-2"></i>
-                        <span class="font-semibold text-gray-700 text-sm">კომპანია</span>
-                      </div>
-                      <p class="text-gray-800 font-medium">გაერთიანებული წყალმომარაგება</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            
-            <div class="bg-gradient-to-r from-neutral-50 to-white rounded-xl shadow-lg border border-neutral-100 p-8">
               <div class="border-l-4 border-blue-800 pl-6 mb-6">
-                <h3 class="text-2xl font-bold text-gray-800">ბიოგრაფია</h3>
+                 <h3 class="text-2xl font-bold text-gray-800">ვაკანსიის აღწერა</h3>
               </div>
               
-              <div class="text-gray-700 leading-relaxed space-y-4">
-                <p v-for="(paragraph, index) in deputy.bio" :key="index">
+              <div class="text-gray-700 leading-relaxed space-y-4 text-sm">
+                <p v-for="(paragraph, index) in vacancy.details" :key="index">
                   {{ paragraph }}
                 </p>
               </div>
+            </div>
+
+            
+            <div class="bg-gradient-to-r from-neutral-50 to-white rounded-xl shadow-lg border border-neutral-100 p-8">
+               <div class="border-l-4 border-blue-800 pl-6 mb-6">
+                 <h3 class="text-2xl font-bold text-gray-800">ძირითადი ინფორმაცია</h3>
+              </div>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+                  <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                    <div class="flex items-center mb-1">
+                      <i class="fas fa-clock text-blue-600 mr-2 text-sm"></i>
+                      <span class="font-semibold text-gray-700 text-xs">ვადა</span>
+                    </div>
+                    <p class="text-gray-800 text-sm">{{ vacancy.deadline }}</p>
+                  </div>
+                  
+                  <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                    <div class="flex items-center mb-1">
+                      <i class="fas fa-map-marker-alt text-blue-600 mr-2 text-sm"></i>
+                      <span class="font-semibold text-gray-700 text-xs">ლოკაცია</span>
+                    </div>
+                    <p class="text-gray-800 text-sm">{{ vacancy.location }}</p>
+                  </div>
+                  
+                  <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
+                    <div class="flex items-center mb-1">
+                      <i class="fas fa-users text-blue-600 mr-2 text-sm"></i>
+                      <span class="font-semibold text-gray-700 text-xs">ტიპი</span>
+                    </div>
+                    <p class="text-gray-800 text-sm">{{ vacancy.type }}</p>
+                  </div>
+                </div>
+                <p class="text-xs text-gray-500 mt-4">გამოქვეყნებულია: {{ vacancy.publishDate }}</p>
             </div>
           </main>
 
@@ -82,7 +74,8 @@
               
               <nav class="p-6">
                 <ul class="space-y-3">
-                   <li>
+                  
+                  <li>
                     <NuxtLink
                       to="/company/director"
                       class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
@@ -105,9 +98,9 @@
                   <li>
                     <NuxtLink
                       to="/company/deputies"
-                      class="flex items-center p-3 bg-blue-50 text-blue-800 rounded-lg font-semibold border border-blue-200"
+                       class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
                     >
-                      <i class="fas fa-users mr-3 text-blue-800"></i>
+                      <i class="fas fa-users mr-3 text-gray-500"></i>
                       <span>მოადგილეები</span>
                     </NuxtLink>
                   </li>
@@ -115,9 +108,9 @@
                   <li>
                     <NuxtLink
                       to="/company/vacancies"
-                      class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                       class="flex items-center p-3 bg-blue-50 text-blue-800 rounded-lg font-semibold border border-blue-200"
                     >
-                      <i class="fas fa-briefcase mr-3 text-gray-500"></i>
+                      <i class="fas fa-briefcase mr-3 text-blue-800"></i>
                       <span>ვაკანსია</span>
                     </NuxtLink>
                   </li>
@@ -172,17 +165,19 @@
 
   <div v-else class="bg-white py-16">
     <div class="container mx-auto px-6 text-center">
-      <h1 class="text-3xl font-bold text-gray-800">მოადგილე ვერ მოიძებნა</h1>
-      <p class="text-gray-600 mt-4">გთხოვთ შეამოწმოთ URL და დარწმუნდით, რომ ID არსებობს <strong>/data/deputies.js</strong> ფაილში</p>
+      <h1 class="text-3xl font-bold text-gray-800">ვაკანსია ვერ მოიძებნა</h1>
+      <p class="text-gray-600 mt-4">გთხოვთ შეამოწმოთ URL და დარწმუნდით, რომ ID არსებობს <strong>/data/vacancies.js</strong> ფაილში</p>
     </div>
   </div>
 </template>
 
 <script setup>
 import { useRoute } from 'vue-router';
-import { deputiesData } from '../../../../data/deputies.js'; // Adjust path if needed
+import { vacanciesData } from '../../../data/vacancies.js'; 
 
 const route = useRoute();
-const deputyId = route.params.id;
-const deputy = deputiesData[deputyId];
+
+const vacancyId = Number(route.params.id); 
+
+const vacancy = vacanciesData.find(v => v.id === vacancyId);
 </script>

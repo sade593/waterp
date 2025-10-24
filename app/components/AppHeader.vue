@@ -1,27 +1,36 @@
 <template>
   <div>
-    <div class="bg-gray-900 text-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center py-2 text-sm">
-           <div class="flex items-center space-x-4">
-            <span class="text-gray-400 hidden md:inline">
-              <i class="fas fa-shield-alt mr-2 text-green-500"></i>
-              საქართველოს მთავრობის ოფიციალური ვებ-გვერდი
-            </span>
-          </div>
-          <div class="flex items-center space-x-6">
-            <a href="tel:2930000" class="hover:text-white transition flex items-center">
-              <i class="fas fa-phone mr-2 text-green-500"></i>
-              <span>ცხელი ხაზი: 2 93 00 00</span>
-            </a>
-          </div>
+    <!-- 🔵 Top Contact Bar -->
+    <div class="bg-[#0d1321] text-white text-sm">
+      <div class="container mx-auto flex justify-between items-center py-2 px-4">
+        <!-- Left side: Phone + Email -->
+        <div class="flex items-center space-x-6">
+          <a href="tel:2930000" class="flex items-center hover:text-green-400 transition">
+            <i class="fas fa-phone text-green-500 mr-2"></i>
+            ცხელი ხაზი: 2 93 00 00
+          </a>
+          <a href="mailto:info@water.gov.ge" class="flex items-center hover:text-green-400 transition">
+            <i class="fas fa-envelope text-green-500 mr-2"></i>
+            info@water.gov.ge
+          </a>
+        </div>
+
+        <!-- Right side: Social + Language -->
+        <div class="flex items-center space-x-4">
+          <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-youtube"></i></a>
+          <span class="text-gray-300">|</span>
+          <a href="#" class="hover:text-blue-400 transition">ქარ</a>
+          <span>|</span>
+          <a href="#" class="hover:text-blue-400 transition">ENG</a>
         </div>
       </div>
     </div>
 
+    <!-- ⚪ Main Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-      
-<div class="w-full px-8 flex justify-between items-center py-4">
+      <div class="w-full px-8 flex justify-between items-center py-4">
 
         <NuxtLink to="/">
           <img
@@ -88,7 +97,7 @@
                 >
                   <NuxtLink
                     :to="child.to"
-                    class="flex px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition justify-between items-center"
+                    class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition flex justify-between items-center"
                   >
                     <span>{{ child.text }}</span>
                     <i v-if="child.children" class="fas fa-chevron-right ml-2 text-xs text-gray-400"></i>
@@ -140,7 +149,7 @@
                 >
                   <NuxtLink
                     :to="child.to"
-                    class="px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition flex justify-between items-center"
+                    class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition flex justify-between items-center"
                   >
                     <span>{{ child.text }}</span>
                     <i v-if="child.children" class="fas fa-chevron-right ml-2 text-xs text-gray-400"></i>
@@ -203,7 +212,9 @@
             </div>
           </div>
 
-          <NuxtLink to="/decree-announcements" class="text-gray-700 hover:text-blue-800 font-medium transition">დადგენილების საჯაროდ გამოცხადება</NuxtLink>
+          <NuxtLink to="/decree-announcements" class="text-gray-700 hover:text-blue-800 font-medium transition">
+            დადგენილების საჯაროდ გამოცხადება
+          </NuxtLink>
         </nav>
 
         <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="lg:hidden text-gray-600">

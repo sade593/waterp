@@ -1,80 +1,136 @@
 <template>
-  <div class="bg-gray-50 py-16">
-    <div class="container mx-auto px-8">
+  <div>
+    
+    <div class="bg-blue-800 text-white py-16">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl font-bold mb-4">კომპანია</h1>
+        <p class="text-xl opacity-90">საქართველოს გაერთიანებული წყალმომარაგების კომპანია</p>
+      </div>
+    </div>
 
-      <h1 class="text-3xl font-bold text-gray-800 border-b pb-4 mb-10">კომპანია</h1>
+    
+    <div class="bg-white py-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-8 -mt-16">
 
-      <div class="flex flex-col md:flex-row gap-16">
+          
+          <main class="lg:w-2/3">
+            
+            <div class="bg-gradient-to-r from-neutral-50 to-white rounded-xl shadow-lg border border-neutral-100 p-8">
+              <div class="border-l-4 border-blue-800 pl-6 mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">ისტორია</h3>
+              </div>
 
-        <main class="w-full md:w-2/3">
-          <section>
-            <h2 class="text-2xl font-semibold text-blue-700 border-b-2 border-blue-700 pb-2 mb-4">
-              ისტორია
-            </h2>
-            <p class="text-gray-700 leading-relaxed mb-6">
-              შ.პ.ს. „საქართველოს გაერთიანებული წყალმომარაგების კომპანია“ (UWSCG), სახელმწიფო საკუთრებაში არსებული შეზღუდული პასუხისმგებლობის საზოგადოებაა, რომლის 100% წილის მფლობელი სახელმწიფოა, ხოლო პარტნიორი - საქართველოს ინფრასტრუქტურის სამინისტრო. კომპანია დაარსდა 2010 წლის 14 იანვარს, საქართველოს ეკონომიკის მინისტრის 2010 წლის 11 იანვრის N1-1/13 ბრძანების საფუძველზე. საქართველოს გაერთიანებული წყალმომარაგების კომპანია წყალმომარაგებისა და წყალარინების ქსელით მომსახურებას ახორციელებს მთელი საქართველოს მასშტაბით, ურბანული ტიპის დასახლებებისთვის, ქ. თბილისის, ქ. მცხეთის, ქ. რუსთავის, გარდაბნის მუნიციპალიტეტისა და აჭარის ავტონომიური რესპუბლიკის გარდა.
-            </p>
-            <p class="text-gray-700 leading-relaxed mb-6">
-              კომპანიის სტრუქტურა შედგება თბილისის სათავო ოფისისგან, 11 რეგიონული ფილიალისა და 55 სერვის ცენტრისგან. კომპანიაში დასაქმებულთა საერთო რაოდენობა შეადგენს 3 500 - მდე ადამიანს. თანამშრომელთა 60% დასაქმებულია ტექნიკურ სფეროში, 24% -კომერციულ / ფინანსურ სფეროში, ხოლო 16% - ადმინისტრაციულ სფეროში.
-            </p>
-          </section>
-        </main>
+              
+              <div class="text-gray-700 leading-relaxed space-y-4">
+                 <p>
+                  შ.პ.ს. „საქართველოს გაერთიანებული წყალმომარაგების კომპანია" (UWSCG), სახელმწიფო საკუთრებაში არსებული შეზღუდული პასუხისმგებლობის საზოგადოებაა, რომლის 100% წილის მფლობელი სახელმწიფოა, ხოლო პარტნიორი - საქართველოს ინფრასტრუქტურის სამინისტრო.
+                </p>
+                <p>
+                  კომპანია დაარსდა 2010 წლის 14 იანვარს, საქართველოს ეკონომიკის მინისტრის 2010 წლის 11 იანვრის N1-1/13 ბრძანების საფუძველზე. საქართველოს გაერთიანებული წყალმომარაგების კომპანია წყალმომარაგებისა და წყალარინების ქსელით მომსახურებას ახორციელებს მთელი საქართველოს მასშტაბით, ურბანული ტიპის დასახლებებისთვის, ქ. თბილისის, ქ. მცხეთის, ქ. რუსთავის, გარდაბნის მუნიციპალიტეტისა და აჭარის ავტონომიური რესპუბლიკის გარდა.
+                </p>
+                <p>
+                  კომპანიის სტრუქტურა შედგება თბილისის სათავო ოფისისგან, 11 რეგიონული ფილიალისა და 55 სერვის ცენტრისგან. კომპანიაში დასაქმებულთა საერთო რაოდენობა შეადგენს 3 500 - მდე ადამიანს. თანამშრომელთა 60% დასაქმებულია ტექნიკურ სფეროში, 24% -კომერციულ / ფინანსურ სფეროში, ხოლო 16% - ადმინისტრაციულ სფეროში.
+                </p>
+              </div>
+            </div>
+          </main>
 
-        <aside class="w-full md:w-1/3">
-          <div class="sticky top-28">
-            <ul>
-              <li class="mb-5">
-                <NuxtLink to="/company/director" class="flex items-center text-blue-800 hover:underline">
-                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
-                  <span>დირექტორი</span>
-                </NuxtLink>
-              </li>
-              <li class="mb-5">
-                <NuxtLink to="/company/about" class="flex items-center text-blue-800 hover:underline">
-                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
-                  <span>კომპანია</span>
-                </NuxtLink>
-              </li>
-              <li class="mb-5">
-                <NuxtLink to="/company/deputies" class="flex items-center text-blue-800 hover:underline">
-                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
-                  <span>მოადგილეები</span>
-                </NuxtLink>
-              </li>
-              <li class="mb-5">
-                <NuxtLink to="/company/vacancies" class="flex items-center text-blue-800 hover:underline">
-                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
-                  <span>ვაკანსია</span>
-                </NuxtLink>
-              </li>
-              <li class="mb-5">
-                <NuxtLink to="/company/audit" class="flex items-center text-blue-800 hover:underline">
-                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
-                  <span>აუდირებული ფინანსური ანგარიშება</span>
-                </NuxtLink>
-              </li>
-              <li class="mb-5">
-                <NuxtLink to="/company/director" class="flex items-center text-blue-800 hover:underline">
-                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
-                  <span>წყალმომარაგების კომპანიის ბიზნეს-გეგმა</span>
-                </NuxtLink>
-              </li>
-              <li class="mb-5">
-                <NuxtLink to="/company/personal" class="flex items-center text-blue-800 hover:underline">
-                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
-                  <span>პერსონალურ მონაცემთა დაცვის ოფიცერი</span>
-                </NuxtLink>
-              </li>
-              <li class="mb-5">
-                <NuxtLink to="/company/quality" class="flex items-center text-blue-800 hover:underline">
-                  <i class="fas fa-arrow-right mr-3 text-sm"></i>
-                  <span>ხარისხის მართვის პოლიტიკა</span>
-                </NuxtLink>
-              </li>
-            </ul>
-          </div>
-        </aside>
+          
+          <aside class="lg:w-1/3">
+            <div class="bg-white rounded-xl shadow-lg border border-neutral-100 sticky top-28">
+              <div class="bg-gradient-to-b from-slate-50 to-white p-6 rounded-t-xl">
+                <h3 class="text-xl font-bold text-gray-800 border-l-4 border-blue-800 pl-4">
+                  კომპანია
+                </h3>
+              </div>
 
+              <nav class="p-6">
+                <ul class="space-y-3">
+                  <li>
+                    <NuxtLink
+                      to="/company/director"
+                      class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                    >
+                      <i class="fas fa-user mr-3 text-gray-500"></i>
+                      <span>დირექტორი</span>
+                    </NuxtLink>
+                  </li>
+
+                  <li>
+                    <NuxtLink
+                      to="/company/about"
+                      class="flex items-center p-3 bg-blue-50 text-blue-800 rounded-lg font-semibold border border-blue-200"
+                    >
+                      <i class="fas fa-building mr-3 text-blue-800"></i>
+                      <span>კომპანია</span>
+                    </NuxtLink>
+                  </li>
+
+                  <li>
+                    <NuxtLink
+                      to="/company/deputies"
+                      class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                    >
+                      <i class="fas fa-users mr-3 text-gray-500"></i>
+                      <span>მოადგილეები</span>
+                    </NuxtLink>
+                  </li>
+
+                  <li>
+                    <NuxtLink
+                      to="/company/vacancies"
+                      class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                    >
+                      <i class="fas fa-briefcase mr-3 text-gray-500"></i>
+                      <span>ვაკანსია</span>
+                    </NuxtLink>
+                  </li>
+
+                   <li>
+                    <NuxtLink
+                      to="/company/audit"
+                      class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                    >
+                      <i class="fas fa-chart-line mr-3 text-gray-500"></i>
+                      <span>აუდირებული ფინანსური ანგარიშება</span>
+                    </NuxtLink>
+                  </li>
+
+                   <li>
+                    <NuxtLink
+                      to="/company/buisness-plan"
+                      class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                    >
+                      <i class="fas fa-file-alt mr-3 text-gray-500"></i>
+                      <span>ბიზნეს-გეგმა</span>
+                    </NuxtLink>
+                  </li>
+
+                  <li>
+                    <NuxtLink
+                      to="/company/personal"
+                      class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                    >
+                      <i class="fas fa-shield-alt mr-3 text-gray-500"></i>
+                       <span>პერსონალური ოფიცერი</span>
+                    </NuxtLink>
+                  </li>
+                   <li>
+                    <NuxtLink
+                      to="/company/quality"
+                      class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors"
+                    >
+                      <i class="fas fa-check-circle mr-3 text-gray-500"></i>
+                      <span>ხარისხის პოლიტიკა</span>
+                    </NuxtLink>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </aside>
+
+        </div>
       </div>
     </div>
   </div>
