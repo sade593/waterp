@@ -3,7 +3,7 @@
     <footer class="bg-gray-900 text-white pt-16 pb-8">
       <div class="container mx-auto px-4">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          <!-- Column 1 -->
+          
           <div>
             
         <NuxtLink to="/">
@@ -30,7 +30,7 @@
             </div>
           </div>
 
-          <!-- Column 2 -->
+          
           <div>
             <h4 class="font-semibold text-lg mb-4">სერვისები</h4>
             <ul class="space-y-2">
@@ -41,7 +41,7 @@
             </ul>
           </div>
 
-          <!-- Column 3 -->
+          
           <div>
             <h4 class="font-semibold text-lg mb-4">კომპანია</h4>
             <ul class="space-y-2">
@@ -55,7 +55,7 @@
             </ul>
           </div>
 
-          <!-- Column 4 -->
+          
           <div>
             <h4 class="font-semibold text-lg mb-4">საკონტაქტო</h4>
             <ul class="space-y-2 text-gray-400 text-sm">
@@ -75,7 +75,7 @@
           </div>
         </div>
 
-        <!-- Bottom Footer -->
+        
         <div class="border-t border-gray-800 pt-8">
           <div class="flex flex-col md:flex-row justify-between items-center">
             <p class="text-gray-400 text-sm mb-4 md:mb-0">

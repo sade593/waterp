@@ -1,9 +1,9 @@
 <template>
   <div>
-    <!-- 🔵 Top Contact Bar -->
+    
     <div class="bg-[#0d1321] text-white text-sm">
       <div class="container mx-auto flex justify-between items-center py-2 px-4">
-        <!-- Left side: Phone + Email -->
+        
         <div class="flex items-center space-x-6">
           <a href="tel:2930000" class="flex items-center hover:text-green-400 transition">
             <i class="fas fa-phone text-green-500 mr-2"></i>
@@ -15,7 +15,7 @@
           </a>
         </div>
 
-        <!-- Right side: Social + Language -->
+        
         <div class="flex items-center space-x-4">
           <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <!-- ⚪ Main Header -->
+    
     <header class="bg-white shadow-sm sticky top-0 z-50">
       <div class="w-full px-8 flex justify-between items-center py-4">
 
@@ -97,7 +97,7 @@
                 >
                   <NuxtLink
                     :to="child.to"
-                    class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition flex justify-between items-center"
+                    class="flex px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition justify-between items-center"
                   >
                     <span>{{ child.text }}</span>
                     <i v-if="child.children" class="fas fa-chevron-right ml-2 text-xs text-gray-400"></i>
@@ -122,7 +122,7 @@
             </div>
           </div>
 
-          <NuxtLink to="/services" class="text-gray-700 hover:text-blue-800 font-medium transition">სერვისები</NuxtLink>
+          
 
           <div
             class="relative h-full flex items-center"
@@ -149,7 +149,7 @@
                 >
                   <NuxtLink
                     :to="child.to"
-                    class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition flex justify-between items-center"
+                    class="flex px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition justify-between items-center"
                   >
                     <span>{{ child.text }}</span>
                     <i v-if="child.children" class="fas fa-chevron-right ml-2 text-xs text-gray-400"></i>
@@ -228,7 +228,6 @@
           <li class="border-t"><NuxtLink to="/company/about" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">კომპანია</NuxtLink></li>
           <li class="border-t"><NuxtLink to="/media" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">მედიაცენტრი</NuxtLink></li>
           <li class="border-t"><NuxtLink to="/projects" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">პროექტები</NuxtLink></li>
-          <li class="border-t"><NuxtLink to="/services" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">სერვისები</NuxtLink></li>
           <li class="border-t"><NuxtLink to="/tenders" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">ტენდერები</NuxtLink></li>
           <li class="border-t"><NuxtLink to="/legislation" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">კანონმდებლობა</NuxtLink></li>
           <li class="border-t"><NuxtLink to="/decree-announcements" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">დადგენილების საჯაროდ გამოცხადება</NuxtLink></li>
