@@ -2,7 +2,8 @@
   <div>
     
     <div class="bg-[#0d1321] text-white text-sm">
-      <div class="container mx-auto flex justify-between items-center py-2 px-4">
+      <!-- დესკტოპისთვის -->
+      <div class="container mx-auto flex justify-between items-center py-2 px-4 hidden md:flex">
         
         <div class="flex items-center space-x-6">
           <a href="tel:2930000" class="flex items-center hover:text-green-400 transition">
@@ -26,6 +27,26 @@
           <a href="#" class="hover:text-blue-400 transition">ENG</a>
         </div>
       </div>
+
+      <!-- მობილურისთვის -->
+      <div class="container mx-auto flex justify-between items-center py-2 px-4 md:hidden">
+        <div class="flex items-center space-x-6">
+          <a  href="tel:+995599123456" class="flex items-center  ">
+            <i class="fas fa-phone text-green-500 mr-2"></i>
+            ცხელი ხაზი: <br> 2 93 00 00
+          </a>
+          <a href="mailto:info@water.gov.ge" class="flex items-center ">
+            <i class="fas fa-envelope text-green-500 mr-2"></i>
+            info@water.gov.ge
+          </a>
+        </div>
+
+        <div class="flex items-center">
+          <a href="#" class="hover:text-blue-400 transition">ქარ</a>
+          <span>|</span>
+          <a href="#" class="hover:text-blue-400 transition">ENG</a>
+        </div>
+      </div>
     </div>
 
     
@@ -43,6 +64,7 @@
         <nav class="hidden lg:flex items-center space-x-8">
           <NuxtLink to="/" class="text-gray-700 hover:text-blue-800 font-medium transition">მთავარი</NuxtLink>
 
+          <!-- კომპანია -->
           <div class="relative group h-full flex items-center">
             <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
               კომპანია
@@ -50,7 +72,7 @@
             </button>
             <div class="absolute top-full mt-2 w-72 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-30 border border-gray-200">
               <NuxtLink to="/company/director" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">დირექტორი</NuxtLink>
-              <NuxtLink to="/company/about" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">კომპანია</NuxtLink>
+              <NuxtLink to="/company/director" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">კომპანია</NuxtLink>
               <NuxtLink to="/company/deputies" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">მოადგილეები</NuxtLink>
               <NuxtLink to="/company/vacancies" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ვაკანსია</NuxtLink>
               <NuxtLink to="/company/audit" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">აუდირებული ფინანსური ანგარიშება</NuxtLink>
@@ -60,6 +82,7 @@
             </div>
           </div>
 
+          <!-- მედიაცენტრი -->
           <div class="relative group h-full flex items-center">
             <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
               მედიაცენტრი
@@ -72,10 +95,11 @@
             </div>
           </div>
 
+          <!-- ✅ პროექტები delay -->
           <div
             class="relative h-full flex items-center"
-            @mouseenter="projectsOpen = true"
-            @mouseleave="projectsOpen = false"
+            @mouseenter="openProjects"
+            @mouseleave="closeProjects"
           >
             <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
               პროექტები
@@ -84,8 +108,8 @@
             <div
               v-if="projectsOpen"
               class="absolute top-full mt-2 w-72 bg-white rounded-lg shadow-lg z-30 border border-gray-200"
-              @mouseenter="projectsOpen = true"
-              @mouseleave="projectsOpen = false"
+              @mouseenter="openProjects"
+              @mouseleave="closeProjects"
             >
               <ul>
                 <li
@@ -122,12 +146,11 @@
             </div>
           </div>
 
-          
-
+          <!-- ✅ ტენდერები delay -->
           <div
             class="relative h-full flex items-center"
-            @mouseenter="tendersOpen = true"
-            @mouseleave="tendersOpen = false"
+            @mouseenter="openTenders"
+            @mouseleave="closeTenders"
           >
             <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
               {{ tendersNav.text }}
@@ -136,8 +159,8 @@
             <div
               v-if="tendersOpen"
               class="absolute top-full mt-2 w-72 bg-white rounded-lg shadow-lg z-30 border border-gray-200"
-              @mouseenter="tendersOpen = true"
-              @mouseleave="tendersOpen = false"
+              @mouseenter="openTenders"
+              @mouseleave="closeTenders"
             >
               <ul>
                 <li
@@ -174,10 +197,11 @@
             </div>
           </div>
 
+          <!-- ✅ კანონმდებლობა delay -->
           <div
-            class="relative group h-full flex items-center"
-            @mouseenter="legislationOpen = true"
-            @mouseleave="legislationOpen = false"
+            class="relative h-full flex items-center"
+            @mouseenter="openLegislation"
+            @mouseleave="closeLegislation"
           >
             <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
               {{ legislationNav.text }}
@@ -186,8 +210,8 @@
             <div
               v-if="legislationOpen"
               class="absolute top-full mt-2 w-96 bg-white rounded-lg shadow-lg z-30 border border-gray-200"
-              @mouseenter="legislationOpen = true"
-              @mouseleave="legislationOpen = false"
+              @mouseenter="openLegislation"
+              @mouseleave="closeLegislation"
             >
               <ul>
                 <li v-for="item in legislationNav.children" :key="item.text">
@@ -225,12 +249,12 @@
       <div v-if="isMobileMenuOpen" class="lg:hidden bg-white border-b">
         <ul>
           <li class="border-t"><NuxtLink to="/" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">მთავარი</NuxtLink></li>
-          <li class="border-t"><NuxtLink to="/company/about" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">კომპანია</NuxtLink></li>
-          <li class="border-t"><NuxtLink to="/media" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">მედიაცენტრი</NuxtLink></li>
-          <li class="border-t"><NuxtLink to="/projects" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">პროექტები</NuxtLink></li>
-          <li class="border-t"><NuxtLink to="/tenders" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">ტენდერები</NuxtLink></li>
-          <li class="border-t"><NuxtLink to="/legislation" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">კანონმდებლობა</NuxtLink></li>
-          <li class="border-t"><NuxtLink to="/decree-announcements" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">დადგენილების საჯაროდ გამოცხადება</NuxtLink></li>
+          <li class="border-t"><NuxtLink to="/company/about"@click="closeMobileMenu" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">კომპანია</NuxtLink></li>
+          <li class="border-t"><NuxtLink to="/media/photos"@click="closeMobileMenu" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">მედიაცენტრი</NuxtLink></li>
+          <li class="border-t"><NuxtLink to="/projects/completed-construction/international"@click="closeMobileMenu" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">პროექტები</NuxtLink></li>
+          <li class="border-t"><NuxtLink to="/tenders"@click="closeMobileMenu" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">ტენდერები</NuxtLink></li>
+          <li class="border-t"><NuxtLink to="/legislation"@click="closeMobileMenu" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">კანონმდებლობა</NuxtLink></li>
+          <li class="border-t"><NuxtLink to="/decree-announcements" @click="closeMobileMenu" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">დადგენილების საჯაროდ გამოცხადება</NuxtLink></li>
         </ul>
       </div>
     </header>
@@ -244,9 +268,52 @@ import { tendersNav } from '../../data/tendersNavigation.js';
 import { legislationNav } from '../../data/legislationNavigation.js';
 
 const isMobileMenuOpen = ref(false);
+
 const projectsOpen = ref(false);
-const openSubmenu = ref(null);
 const tendersOpen = ref(false);
-const openTendersSubmenu = ref(null);
 const legislationOpen = ref(false);
+
+const openSubmenu = ref(null);
+const openTendersSubmenu = ref(null);
+
+let projectsTimer = null;
+let tendersTimer = null;
+let legislationTimer = null;
+
+// Open instantly
+function openProjects() {
+  clearTimeout(projectsTimer);
+  projectsOpen.value = true;
+}
+function openTenders() {
+  clearTimeout(tendersTimer);
+  tendersOpen.value = true;
+}
+function openLegislation() {
+  clearTimeout(legislationTimer);
+  legislationOpen.value = true;
+}
+
+// Close fast after mouse leaves
+function closeProjects() {
+  projectsTimer = setTimeout(() => {
+    projectsOpen.value = false;
+  }, 250); // quick close after leaving
+}
+
+function closeTenders() {
+  tendersTimer = setTimeout(() => {
+    tendersOpen.value = false;
+  }, 250);
+}
+
+function closeLegislation() {
+  legislationTimer = setTimeout(() => {
+    legislationOpen.value = false;
+  }, 250);
+}
+
+const closeMobileMenu = () => {
+  isMobileMenuOpen.value = false;
+};
 </script>

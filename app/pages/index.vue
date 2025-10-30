@@ -7,65 +7,68 @@
       <div class="absolute bottom-0 left-0 w-96 h-96 bg-gray-800 rounded-full filter blur-3xl"></div>
     </div>
 
-    <div class="container mx-auto px-4 py-20 lg:py-32 relative z-10">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="slide-up">
-          <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
-            სუფთა წყალი <br>
-            <span class="text-gradient">ყველა ოჯახს</span>
-          </h1>
-          <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-            უზრუნველვყოფთ 24-საათიან, უწყვეტ და ხარისხიან წყალმომარაგებას
-            1.2 მილიონზე მეტი აბონენტისთვის მთელი საქართველოს მასშტაბით.
-          </p>
+    <div class="container mx-auto px-4 py-10 lg:py-32 relative z-10">
+  <div class="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+    <!-- ტექსტური ნაწილი -->
+    <div class="slide-up flex flex-col items-center lg:items-start">
+      <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
+        სუფთა წყალი <br>
+        <span class="text-gradient">ყველა ოჯახს</span>
+      </h1>
 
-          <div class="flex flex-wrap gap-4 mb-12">
-            <button class="gradient-primary text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 ripple">
-              <i class="fas fa-tachometer-alt mr-2"></i>
-              ჩვენების დაფიქსირება
-            </button>
-            <button class="bg-white text-gray-700 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold hover:border-blue-800 hover:text-blue-800 transition-all duration-300">
-              <i class="fas fa-credit-card mr-2"></i>
-              ონლაინ გადახდა
-            </button>
-          </div>
+      <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-md">
+        უზრუნველვყოფთ 24-საათიან, უწყვეტ და ხარისხიან წყალმომარაგებას
+        1.2 მილიონზე მეტი აბონენტისთვის მთელი საქართველოს მასშტაბით.
+      </p>
 
-          <!-- Stats -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div>
-              <div class="text-3xl font-bold text-blue-800 mb-1">1.2M+</div>
-              <div class="text-sm text-gray-600">აბონენტი</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-blue-800 mb-1">165+</div>
-              <div class="text-sm text-gray-600">ლოკაცია</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-blue-800 mb-1">110+</div>
-              <div class="text-sm text-gray-600">პროექტი</div>
-            </div>
-            <div>
-              <div class="text-3xl font-bold text-blue-800 mb-1">24/7</div>
-              <div class="text-sm text-gray-600">მომსახურება</div>
-            </div>
-          </div>
+      <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-12">
+        <button class="gradient-primary text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 ripple">
+          <i class="fas fa-tachometer-alt mr-2"></i>
+          ჩვენების დაფიქსირება
+        </button>
+        <button class="bg-white text-gray-700 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold hover:border-blue-800 hover:text-blue-800 transition-all duration-300">
+          <i class="fas fa-credit-card mr-2"></i>
+          ონლაინ გადახდა
+        </button>
+      </div>
+
+      <!-- სტატისტიკა -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center lg:justify-start">
+        <div>
+          <div class="text-3xl font-bold text-blue-800 mb-1">1.2M+</div>
+          <div class="text-sm text-gray-600">აბონენტი</div>
         </div>
+        <div>
+          <div class="text-3xl font-bold text-blue-800 mb-1">165+</div>
+          <div class="text-sm text-gray-600">ლოკაცია</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-blue-800 mb-1">110+</div>
+          <div class="text-sm text-gray-600">პროექტი</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-blue-800 mb-1">24/7</div>
+          <div class="text-sm text-gray-600">მომსახურება</div>
+        </div>
+      </div>
+    </div>
 
-        <!-- Hero Image/Graphic -->
-        <div class="relative hidden lg:block">
-          <div class="relative">
-            <div class="absolute inset-0 gradient-primary opacity-10 rounded-3xl transform rotate-6"></div>
-            <div class="relative bg-white rounded-3xl shadow-2xl p-8">
-              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f8fafc' width='400' height='300'/%3E%3Cpath fill='%231e3a8a' d='M200 80c0 0-40 40-40 70c0 22 18 40 40 40s40-18 40-40C240 120 200 80 200 80z' opacity='0.1'/%3E%3Cpath fill='%231e3a8a' d='M200 100c0 0-30 30-30 50c0 16 14 30 30 30s30-14 30-30C230 130 200 100 200 100z' opacity='0.2'/%3E%3Cpath fill='%231e3a8a' d='M200 120c0 0-20 20-20 35c0 11 9 20 20 20s20-9 20-20C220 140 200 120 200 120z'/%3E%3Ccircle cx='150' cy='220' r='30' fill='%231e3a8a' opacity='0.1'/%3E%3Ccircle cx='250' cy='220' r='25' fill='%231e3a8a' opacity='0.15'/%3E%3Cpath stroke='%231e3a8a' stroke-width='2' fill='none' d='M100 250 Q150 230 200 240 T300 250' opacity='0.3'/%3E%3C/svg%3E" alt="Water illustration" class="w-full h-auto float-animation">
-              <div class="absolute bottom-4 right-4 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
-                <i class="fas fa-check-circle mr-2"></i>
-                ISO სერტიფიცირებული
-              </div>
-            </div>
+    <!-- სურათი -->
+    <div class="relative hidden lg:block">
+      <div class="relative">
+        <div class="absolute inset-0 gradient-primary opacity-10 rounded-3xl transform rotate-6"></div>
+        <div class="relative bg-white rounded-3xl shadow-2xl p-8">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f8fafc' width='400' height='300'/%3E%3Cpath fill='%231e3a8a' d='M200 80c0 0-40 40-40 70c0 22 18 40 40 40s40-18 40-40C240 120 200 80 200 80z' opacity='0.1'/%3E%3Cpath fill='%231e3a8a' d='M200 100c0 0-30 30-30 50c0 16 14 30 30 30s30-14 30-30C230 130 200 100 200 100z' opacity='0.2'/%3E%3Cpath fill='%231e3a8a' d='M200 120c0 0-20 20-20 35c0 11 9 20 20 20s20-9 20-20C220 140 200 120 200 120z'/%3E%3Ccircle cx='150' cy='220' r='30' fill='%231e3a8a' opacity='0.1'/%3E%3Ccircle cx='250' cy='220' r='25' fill='%231e3a8a' opacity='0.15'/%3E%3Cpath stroke='%231e3a8a' stroke-width='2' fill='none' d='M100 250 Q150 230 200 240 T300 250' opacity='0.3'/%3E%3C/svg%3E" alt="Water illustration" class="w-full h-auto float-animation">
+          <div class="absolute bottom-4 right-4 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+            <i class="fas fa-check-circle mr-2"></i>
+            ISO სერტიფიცირებული
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
   </section>
   <!-- Quick Services -->
   <section class="py-16 mt-20 relative z-20">
@@ -123,12 +126,12 @@
   </section>
 
   <!-- About Section -->
-  <section class="py-20 bg-white">
+  <section class="py-10 lg:py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <span class="text-sky-600 font-semibold text-sm uppercase tracking-wider">ჩვენ შესახებ</span>
-          <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2 mb-6">
+          <h2 class="text-3xl lg:text-4xl text-center lg:text-left font-bold text-gray-900 mt-2 mb-6">
             თანამედროვე ინფრასტრუქტურა <br>
             <span class="text-gradient">მთელი საქართველოსთვის</span>
           </h2>
@@ -541,7 +544,7 @@
           </div>
           <h3 class="text-lg font-semibold text-gray-900 mb-2">მისამართი</h3>
           <p class="text-violet-600 font-semibold text-xl mb-1">თბილისი</p>
-          <p class="text-gray-600 text-sm">ვაჟა-ფშაველას გამზ. 76</p>
+          <p class="text-gray-600 text-sm">ანა პოლიტკოვსკაია 5</p>
         </div>
       </div>
 
