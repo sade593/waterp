@@ -57,7 +57,7 @@
           </NuxtLink>
 
           <nav class="hidden lg:flex items-center space-x-8">
-            <NuxtLink to="/" class="text-gray-700 hover:text-blue-800 font-medium transition">მთავარი</NuxtLink>
+            <NuxtLink to="/" class="text-gray-700 font-size hover:text-blue-800 font-medium transition">მთავარი</NuxtLink>
 
             <!-- კომპანია -->
             <div class="relative group h-full flex items-center">
