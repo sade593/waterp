@@ -8,66 +8,72 @@
     </div>
 
     <div class="container mx-auto px-4 py-10 lg:py-32 relative z-10">
-  <div class="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
-    <!-- ტექსტური ნაწილი -->
-    <div class="slide-up flex flex-col items-center lg:items-start">
-      <h2 class="text-xl lg:text-3xl xl:text-3xl font-bold text-gray-900 leading-snug mb-4">
-        ერთად გავუფრთხილდეთ რესურსებს<br>
-      <span class="text-gradient">პასუხისმგებლობა თითოეულ წვეთშია</span>
-      </h2>
+      <div class="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left ">
+        <!-- ტექსტური ნაწილი -->
+        <div class="slide-up flex flex-col items-center lg:items-start ">
+          <h2 class="text-xl lg:text-3xl xl:text-3xl font-bold text-gray-900 leading-snug mb-4">
+            ერთად გავუფრთხილდეთ რესურსებს<br>
+            <span class="text-gradient">პასუხისმგებლობა თითოეულ წვეთშია</span>
+          </h2>
 
-<p class="text-base text-gray-600 mb-6 leading-relaxed max-w-md">
-  დღეის მდგომარეობით, ქვეყნის 100-ზე მეტ მდებარეობაში  3 მილიარდამდე ლარის ღირებულების ინფრასტრუქტურული პროექტები მიმდინარეობს. 
-</p>
+          <p class="text-base text-gray-600 mb-6 leading-relaxed max-w-md">
+            დღეის მდგომარეობით, ქვეყნის 100-ზე მეტ მდებარეობაში  3 მილიარდამდე ლარის ღირებულების ინფრასტრუქტურული პროექტები მიმდინარეობს.
+          </p>
 
 
-      <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-12">
-        <button class="gradient-primary text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 ripple">
-          <i class="fas fa-tachometer-alt mr-2"></i>
-          ჩვენების დაფიქსირება
-        </button>
-        <button class="bg-white text-gray-700 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold hover:border-blue-800 hover:text-blue-800 transition-all duration-300">
-          <i class="fas fa-credit-card mr-2"></i>
-          ონლაინ გადახდა
-        </button>
-      </div>
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-12">
+            <button class="gradient-primary text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 ripple">
+              <i class="fas fa-tachometer-alt mr-2"></i>
+              ჩვენების დაფიქსირება
+            </button>
+            <button class="bg-white text-gray-700 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold hover:border-blue-800 hover:text-blue-800 transition-all duration-300">
+              <i class="fas fa-credit-card mr-2"></i>
+              ონლაინ გადახდა
+            </button>
+          </div>
 
-      <!-- სტატისტიკა -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 justify-center lg:justify-start">
-        <div>
-          <div class="text-3xl font-bold text-blue-800 mb-1">1.2M+</div>
-          <div class="text-sm text-gray-600">აბონენტი</div>
+          <!-- სტატისტიკა -->
+          <div class="grid w-full grid-cols-2 md:grid-cols-4 lg:justify-between">
+            <div>
+              <div class="text-3xl text-center font-bold text-blue-800 mb-1">1.2M+</div>
+              <div class="text-sm text-gray-600 text-center ">აბონენტი</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-blue-800 mb-1 text-center" >165+</div>
+              <div class="text-sm text-gray-600  text-center">ლოკაცია</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-blue-800 mb-1 text-center">110+</div>
+              <div class="text-sm text-gray-600 text-center">პროექტი</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-blue-800 mb-1 text-center">24/7</div>
+              <div class="text-sm text-gray-600 text-center">მომსახურება</div>
+            </div>
+          </div>
         </div>
-        <div>
-          <div class="text-3xl font-bold text-blue-800 mb-1">165+</div>
-          <div class="text-sm text-gray-600">ლოკაცია</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-blue-800 mb-1">110+</div>
-          <div class="text-sm text-gray-600">პროექტი</div>
-        </div>
-        <div>
-          <div class="text-3xl font-bold text-blue-800 mb-1">24/7</div>
-          <div class="text-sm text-gray-600">მომსახურება</div>
-        </div>
-      </div>
-    </div>
 
-    <!-- სურათი -->
-    <div class="relative hidden lg:block">
-      <div class="relative">
-        <div class="absolute inset-0 gradient-primary opacity-10 rounded-3xl transform rotate-6"></div>
-        <div class="relative bg-white rounded-3xl shadow-2xl p-8">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f8fafc' width='400' height='300'/%3E%3Cpath fill='%231e3a8a' d='M200 80c0 0-40 40-40 70c0 22 18 40 40 40s40-18 40-40C240 120 200 80 200 80z' opacity='0.1'/%3E%3Cpath fill='%231e3a8a' d='M200 100c0 0-30 30-30 50c0 16 14 30 30 30s30-14 30-30C230 130 200 100 200 100z' opacity='0.2'/%3E%3Cpath fill='%231e3a8a' d='M200 120c0 0-20 20-20 35c0 11 9 20 20 20s20-9 20-20C220 140 200 120 200 120z'/%3E%3Ccircle cx='150' cy='220' r='30' fill='%231e3a8a' opacity='0.1'/%3E%3Ccircle cx='250' cy='220' r='25' fill='%231e3a8a' opacity='0.15'/%3E%3Cpath stroke='%231e3a8a' stroke-width='2' fill='none' d='M100 250 Q150 230 200 240 T300 250' opacity='0.3'/%3E%3C/svg%3E" alt="Water illustration" class="w-full h-auto float-animation">
-          <div class="absolute bottom-4 right-4 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
-            <i class="fas fa-check-circle mr-2"></i>
-            ISO სერტიფიცირებული
+        <!-- სურათი -->
+        <div class="relative hidden lg:block">
+          <div class="relative">
+            <div class="absolute inset-0 gradient-primary opacity-10 rounded-3xl transform rotate-6"></div>
+            <div class="relative bg-white rounded-3xl shadow-2xl p-1">
+              <video
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="top-0 left-0  object-cover rounded-2xl"
+              >
+                <source src="../assets/video/video.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+
+
 
   </section>
   <!-- Quick Services -->
