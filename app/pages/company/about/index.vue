@@ -33,7 +33,7 @@
               </div>
             </div>
 
-            <!-- ✅ მიზანი -->
+            
             <div class="bg-gradient-to-r from-neutral-50 to-white rounded-xl shadow-lg border border-neutral-100 p-8">
               <div class="border-l-4 border-blue-800 pl-6 mb-6">
                 <h3 class="text-2xl font-bold text-gray-800">მიზანი</h3>
@@ -55,7 +55,7 @@
 
           </main>
 
-          <!-- ✅ მარჯვენა მენიუ იგივე დარჩა -->
+          
           <aside class="lg:w-1/3">
             <div class="bg-white rounded-xl shadow-lg border border-neutral-100 sticky top-28">
               <div class="bg-gradient-to-b from-slate-50 to-white p-6 rounded-t-xl">
