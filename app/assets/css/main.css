@@ -22,6 +22,7 @@
 * {
   font-size: calc(100% - 0.06px);
 }
+
 @tailwind base;
 
 body {

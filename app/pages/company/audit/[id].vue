@@ -14,7 +14,7 @@
             height="800px"
             style="border: none;"
           >
-            <p>Your browser does not support embedded PDFs. You can <a :href="auditReport.pdfUrl">download the PDF</a> instead.</p>
+
           </iframe>
         </div>
       </div>
