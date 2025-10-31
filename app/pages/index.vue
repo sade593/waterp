@@ -11,14 +11,15 @@
   <div class="grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
     <!-- ტექსტური ნაწილი -->
     <div class="slide-up flex flex-col items-center lg:items-start">
-      <h2 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6">
+      <h2 class="text-xl lg:text-3xl xl:text-3xl font-bold text-gray-900 leading-snug mb-4">
         ერთად გავუფრთხილდეთ რესურსებს<br>
-        <span class="text-gradient">პასუხისმგებლობა თითოეულ წვეთშია</span>
+      <span class="text-gradient">პასუხისმგებლობა თითოეულ წვეთშია</span>
       </h2>
 
-      <p class="text-xl text-gray-600 mb-8 leading-relaxed max-w-md">
-        დღეის მდგომარეობით, ქვეყნის 100-ზე მეტ მდებარეობაში  3 მილიარდამდე ლარის ღირებულების ინფრასტრუქტურული პროექტები მიმდინარეობს. 
-      </p>
+<p class="text-base text-gray-600 mb-6 leading-relaxed max-w-md">
+  დღეის მდგომარეობით, ქვეყნის 100-ზე მეტ მდებარეობაში  3 მილიარდამდე ლარის ღირებულების ინფრასტრუქტურული პროექტები მიმდინარეობს. 
+</p>
+
 
       <div class="flex flex-wrap justify-center lg:justify-start gap-4 mb-12">
         <button class="gradient-primary text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105 ripple">

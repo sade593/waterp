@@ -2,32 +2,27 @@
   <div>
     <footer class="bg-gray-900 text-white pt-16 pb-8">
       <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           
           <div>
-            
-        <NuxtLink to="/">
-          <img 
-            src="/wlogo.png" 
-            alt="Company Logo"
-            class="h-14 w-auto"
-          >
-        </NuxtLink>
-            <p class="text-gray-400 text-sm mb-4">
-              საქართველოს გაერთიანებული წყალმომარაგების კომპანია -
-              ვზრუნავთ სუფთა წყლის მიწოდებაზე.
-            </p>
-            <div class="flex space-x-3">
-              <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-800 transition">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-800 transition">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-800 transition">
-                <i class="fab fa-youtube"></i>
-              </a>
+
+            <div class="relative">
+              <div class="relative">
+                <div class="absolute inset-0 gradient-primary opacity-10 rounded-3xl transform rotate-6"></div>
+                <div class="relative bg-white rounded-3xl shadow-2xl p-2">
+                  <NuxtLink to="/" >
+                    <img 
+                      src="/wlogo.png" 
+                      alt="Company Logo"
+                      class="h-14 w-auto"
+                    >
+                  </NuxtLink>
+                </div>
+              </div>
             </div>
+        
+          
+            
           </div>
 
           
@@ -72,7 +67,35 @@
                 თბილისი, ანა პოლიტკოსვკაიას 5
               </li>
             </ul>
+            <div class="flex space-x-6 mt-3">
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-800 transition">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-800 transition">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-800 transition">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
           </div>
+          <div>
+            <ul>
+              <li>
+                
+                  <h4 class="flex font-semibold text-lg mb-4">საბანკო რეკვიზიტი </h4>
+                    <p class="text-gray-400 hover:text-white transition">
+                      საბანკო ანგარიში: GE64LB11000000000004580000<br>
+                      ბანკის კოდი: 220101480<br>
+                      იდენტიფიკატორი: 404124830 
+                    </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          
+                
         </div>
 
         
