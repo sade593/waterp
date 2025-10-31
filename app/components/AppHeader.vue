@@ -74,7 +74,7 @@
                   >დირექტორი</NuxtLink
                 >
                 <NuxtLink
-                  to="/company/director"
+                  to="/company/about"
                   class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition"
                   >კომპანია</NuxtLink
                 >
