@@ -66,17 +66,18 @@
 
               <nav class="p-6">
                 <ul class="space-y-3">
-                  <li>
-                    <NuxtLink to="/company/director" class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
-                      <i class="fas fa-user mr-3 text-gray-500"></i>
-                      <span>დირექტორი</span>
-                    </NuxtLink>
-                  </li>
+                 
 
                   <li>
                     <NuxtLink to="/company/about" class="flex items-center p-3 bg-blue-50 text-blue-800 rounded-lg font-semibold border border-blue-200">
                       <i class="fas fa-building mr-3 text-blue-800"></i>
                       <span>კომპანია</span>
+                    </NuxtLink>
+                  </li>
+                   <li>
+                    <NuxtLink to="/company/director" class="flex items-center p-3 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors">
+                      <i class="fas fa-user mr-3 text-gray-500"></i>
+                      <span>დირექტორი</span>
                     </NuxtLink>
                   </li>
 

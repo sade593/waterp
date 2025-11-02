@@ -70,4 +70,35 @@ body {
   }
 }
 
+/* Keep dropdowns visible and avoid horizontal scrollbars */
+header,
+nav,
+.relative,
+.z-50 {
+  overflow: visible !important;
+}
+body {
+  overflow-x: hidden !important;
+}
+
+/* Mobile accordion: fade + slide animation */
+.accordion {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  overflow: hidden;
+  transition:
+    max-height 300ms ease,
+    opacity 250ms ease,
+    transform 250ms ease;
+}
+
+.accordion.open {
+  max-height: 1200px; /* big enough to fit content */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
 @tailwind utilities;
