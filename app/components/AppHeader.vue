@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- ✅ Fixed Topbar + Navbar Container -->
+    
     <div class="fixed top-0 left-0 w-full z-50 overflow-visible">
       <!-- Topbar -->
       <div class="bg-[#0d1321] text-white text-sm">
@@ -25,7 +25,8 @@
           </div>
         </div>
 
-        <!-- მობილურისთვის -->
+        
+        
         <div class="container mx-auto flex justify-between items-center py-2 px-4 md:hidden">
           <div class="flex items-center space-x-6">
             <a href="tel:+995599123456" class="flex items-center">
@@ -43,18 +44,20 @@
         </div>
       </div>
 
-      <!-- Navbar -->
+      
       <header class="bg-white shadow-sm overflow-visible">
         <div class="w-full px-8 flex justify-between items-center py-4 overflow-visible">
           <NuxtLink to="/">
             <img src="/wlogo.png" alt="Company Logo" class="h-14 w-auto" />
           </NuxtLink>
 
-          <!-- ✅ Desktop Navbar -->
+          
+          
           <nav class="hidden lg:flex items-center space-x-8 overflow-visible">
             <NuxtLink to="/" class="text-gray-700 hover:text-blue-800 font-medium transition">მთავარი</NuxtLink>
 
-            <!-- კომპანია -->
+            
+            
             <div class="relative group h-full flex items-center overflow-visible">
               <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
                 კომპანია <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -73,7 +76,7 @@
               </div>
             </div>
 
-            <!-- მედიაცენტრი -->
+            
             <div class="relative group h-full flex items-center overflow-visible">
               <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
                 მედიაცენტრი <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -85,7 +88,7 @@
               </div>
             </div>
 
-            <!-- ✅ პროექტები (submenu always opens LEFT) -->
+            <
             <div class="relative h-full flex items-center overflow-visible" @mouseenter="openProjects" @mouseleave="closeProjects">
               <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
                 პროექტები <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -112,7 +115,7 @@
                       <i v-if="child.children" class="fas fa-chevron-left ml-2 text-xs text-gray-400"></i>
                     </NuxtLink>
 
-                    <!-- Always open to the LEFT -->
+                    
                     <div
                       v-if="child.children && openSubmenu === child.text"
                       class="absolute right-full top-0 w-72 bg-white rounded-l-lg shadow-lg z-40 border border-gray-200"
@@ -133,7 +136,7 @@
               </div>
             </div>
 
-            <!-- ✅ ტენდერები (unchanged desktop layout) -->
+           
             <div class="relative h-full flex items-center overflow-visible" @mouseenter="openTenders" @mouseleave="closeTenders">
               <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
                 {{ tendersNav.text }} <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -180,7 +183,7 @@
               </div>
             </div>
 
-            <!-- ✅ კანონმდებლობა (desktop as-is) -->
+            
             <div class="relative h-full flex items-center overflow-visible" @mouseenter="openLegislation" @mouseleave="closeLegislation">
               <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
                 {{ legislationNav.text }} <i class="fas fa-chevron-down ml-1 text-xs"></i>
@@ -214,7 +217,7 @@
               </div>
             </div>
 
-            <!-- (Desktop) Standalone link kept as in your working code -->
+          
             <NuxtLink
               to="/decree-announcements"
               class="text-gray-700 hover:text-blue-800 font-medium transition"
@@ -223,26 +226,26 @@
             </NuxtLink>
           </nav>
 
-          <!-- Mobile Menu Button -->
+          
           <button @click="isMobileMenuOpen = !isMobileMenuOpen" class="lg:hidden text-gray-600">
             <i class="fas fa-bars text-2xl"></i>
           </button>
         </div>
 
-        <!-- ✅ Mobile Menu (scrollable, tap-to-expand with fade+slide) -->
+        
         <div
           v-if="isMobileMenuOpen"
           class="lg:hidden bg-white border-b max-h-[80vh] overflow-y-auto"
         >
           <ul>
-            <!-- მთავარი -->
+            
             <li class="border-t">
               <NuxtLink to="/" @click="closeMobileMenu" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">
                 მთავარი
               </NuxtLink>
             </li>
 
-            <!-- კომპანია -->
+            
             <li class="border-t">
               <button @click="toggle('company')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">
                 კომპანია
@@ -259,7 +262,7 @@
               </div>
             </li>
 
-            <!-- მედიაცენტრი -->
+            
             <li class="border-t">
               <button @click="toggle('media')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">
                 მედიაცენტრი
@@ -271,7 +274,7 @@
               </div>
             </li>
 
-            <!-- პროექტები (from data: children -> grandchildren) -->
+            
             <li class="border-t">
               <button @click="toggle('projects')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">
                 პროექტები
@@ -292,7 +295,7 @@
               </div>
             </li>
 
-            <!-- ტენდერები (from data) -->
+            
             <li class="border-t">
               <button @click="toggle('tenders')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">
                 ტენდერები
@@ -313,7 +316,6 @@
               </div>
             </li>
 
-            <!-- კანონმდებლობა (from data) + decree inside -->
             <li class="border-t">
               <button @click="toggle('legislation')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">
                 კანონმდებლობა
@@ -340,7 +342,6 @@
                   </NuxtLink>
                 </template>
 
-                <!-- ✅ decree announcements INSIDE legislation on mobile -->
                 <NuxtLink
                   to="/decree-announcements"
                   @click="closeMobileMenu"
@@ -362,8 +363,9 @@
 <script setup>
 import { ref } from 'vue'
 import { projectsNav } from '../../data/projectsNavigation.js'
-import { tendersNav } from '../../data/projectsNavigation.js' // tendersNav is exported from same file you pasted
-import { legislationNav } from '../../data/projectsNavigation.js' // legislationNav too
+import { tendersNav } from '../../data/tendersNavigation.js'
+import { legislationNav } from '../../data/legislationNavigation.js'
+
 
 const isMobileMenuOpen = ref(false)
 const projectsOpen = ref(false)
@@ -372,7 +374,6 @@ const legislationOpen = ref(false)
 const openSubmenu = ref(null)
 const openTendersSubmenu = ref(null)
 
-// desktop hovers
 function openProjects() { projectsOpen.value = true }
 function closeProjects() { projectsOpen.value = false }
 function openTenders() { tendersOpen.value = true }
@@ -380,7 +381,6 @@ function closeTenders() { tendersOpen.value = false }
 function openLegislation() { legislationOpen.value = true }
 function closeLegislation() { legislationOpen.value = false }
 
-// mobile accordion state
 const mobile = ref({
   company: false,
   media: false,
