@@ -217,7 +217,7 @@
               </div>
             </div>
 
-          
+
             <NuxtLink
               to="/decree-announcements"
               class="text-gray-700 hover:text-blue-800 font-medium transition"
@@ -232,7 +232,7 @@
           </button>
         </div>
 
-        
+
         <div
           v-if="isMobileMenuOpen"
           class="lg:hidden bg-white border-b max-h-[80vh] overflow-y-auto"
