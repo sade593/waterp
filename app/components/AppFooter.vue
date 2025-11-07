@@ -40,10 +40,10 @@
           <div>
             <h4 class="font-semibold text-lg mb-4">კომპანია</h4>
             <ul class="space-y-2">
-              <li><a href="#" class="text-gray-400 hover:text-white transition">ჩვენ შესახებ</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-white transition">პროექტები</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-white transition">ვაკანსიები</a></li>
-              <li><a href="#" class="text-gray-400 hover:text-white transition">ტენდერები</a></li>
+              <li><a href="/company/about" class="text-gray-400 hover:text-white transition">ჩვენ შესახებ</a></li>
+              <li><a href="/projects/ongoing-construction/international" class="text-gray-400 hover:text-white transition">პროექტები</a></li>
+              <li><a href="company/vacancies" class="text-gray-400 hover:text-white transition">ვაკანსიები</a></li>
+              <li><a href="/tenders/ongoing/international" class="text-gray-400 hover:text-white transition">ტენდერები</a></li>
               
               
 
@@ -59,8 +59,10 @@
                 2 93 00 00
               </li>
               <li class="flex items-center">
-                <i class="fas fa-envelope mr-2"></i>
-                info@water.gov.ge
+                 <a href="mailto:info@water.gov.ge" class="flex items-center hover:text-green-400 transition">
+              <i class="fas fa-envelope mr-2"></i> info@water.gov.ge
+            </a>
+                
               </li>
               <li class="flex items-start">
                 <i class="fas fa-map-marker-alt mr-2 mt-1"></i>

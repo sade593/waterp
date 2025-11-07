@@ -6,17 +6,23 @@
         <h1 class="text-3xl font-bold text-gray-800 border-b pb-4 mb-6">{{ auditReport.year }} წლის ანგარიში</h1>
         <p class="text-gray-600 mb-8">{{ auditReport.title }}</p>
 
-        <div class="border rounded-lg overflow-hidden shadow-md">
-          <iframe
-            :src="auditReport.pdfUrl"
-            type="application/pdf"
-            width="100%"
-            height="800px"
-            style="border: none;"
-          >
+       <div class="border rounded-lg overflow-hidden shadow-md">
+  <object
+    :data="auditReport.pdfUrl"
+    type="application/pdf"
+    width="100%"
+    height="800px"
+    class="w-full h-[800px]"
+  >
+    <p class="p-4 text-gray-600">
+      Your browser does not support PDF display.  
+      <a :href="auditReport.pdfUrl" target="_blank" class="text-blue-600 underline">
+        Click here to view or download the report.
+      </a>
+    </p>
+  </object>
+</div>
 
-          </iframe>
-        </div>
       </div>
 
       <div v-else>

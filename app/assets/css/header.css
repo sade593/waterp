@@ -1,0 +1,12 @@
+.dropdown-menu {
+  @apply absolute top-full mt-2 w-72 bg-white rounded-lg shadow-lg z-30 border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200;
+}
+
+.dropdown-link {
+  @apply block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition;
+}
+
+.submenu-left {
+  @apply absolute left-full top-0 w-72 bg-white rounded-lg shadow-lg z-40 border border-gray-200;
+  transform: translateX(-100%);
+}

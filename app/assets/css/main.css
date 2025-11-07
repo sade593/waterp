@@ -27,6 +27,7 @@
 
 body {
   @apply font-sans;
+  overflow:hidden;
 }
 
 @tailwind components;
@@ -70,7 +71,7 @@ body {
   }
 }
 
-/* Keep dropdowns visible and avoid horizontal scrollbars */
+
 header,
 nav,
 .relative,
@@ -81,22 +82,34 @@ body {
   overflow-x: hidden !important;
 }
 
-/* Mobile accordion: fade + slide animation */
+
 .accordion {
   max-height: 0;
   opacity: 0;
   transform: translateY(-4px);
   overflow: hidden;
   transition:
-    max-height 300ms ease,
-    opacity 250ms ease,
-    transform 250ms ease;
+    max-height 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
 .accordion.open {
-  max-height: 1200px; /* big enough to fit content */
+  max-height: 1000px; 
   opacity: 1;
   transform: translateY(0);
+  overflow: visible; 
+  position: relative;
+  z-index: 1;
+}
+
+
+header, nav {
+  pointer-events: auto;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 

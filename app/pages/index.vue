@@ -311,6 +311,7 @@
 
       <div class="text-center mt-12">
         <button class="gradient-primary text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+          
           ყველა პროექტის ნახვა
           <i class="fas fa-arrow-right ml-2"></i>
         </button>
@@ -484,7 +485,7 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
+  
   <section class="py-20 bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10">
       <div class="absolute top-0 right-0 w-96 h-96 bg-blue-900 rounded-full filter blur-3xl"></div>

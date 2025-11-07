@@ -1,0 +1,37 @@
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  padding: 10px 0;
+  font-size: 1em;
+  background: transparent;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #1d4ed8;
+}
+
+.input-group label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #aaa;
+  font-size: 1em;
+  pointer-events: none;
+  transition: transform 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+/* ✅ Floating label moves up when input has text or focus */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  transform: translateY(-150%);
+  font-size: 0.8em;
+  color: #1d4ed8;
+}

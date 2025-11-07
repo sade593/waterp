@@ -19,7 +19,7 @@ export const legislationNav = {
     },
     {
       text: 'წყლის სტანდარტები',
-      to: '/legislation/pdfs/water-standarts.pdf' 
+      to: '/legislation/pdfs/water-standards.pdf' 
     },
     {
       text: 'უსაფრთხოების პროტოკოლები, ხარჯთაღრიცხვები და ანგარიშგებები',
