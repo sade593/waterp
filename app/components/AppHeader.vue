@@ -49,148 +49,72 @@
           </NuxtLink>
 
           <!-- Desktop nav -->
-          <nav class="hidden lg:flex items-center space-x-8 overflow-visible">
+          <nav class="hidden lg:flex items-center space-x-8 overflow-visible relative">
             <NuxtLink to="/" class="text-gray-700 hover:text-blue-800 font-medium transition">მთავარი</NuxtLink>
 
-            <!-- კომპანია (pure hover) -->
-            <div class="relative h-full flex items-center overflow-visible group">
-              <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
-                კომპანია <i class="fas fa-chevron-down ml-1 text-xs"></i>
-              </button>
-              <!-- gapless hover area: pt-2 -mt-2 keeps panel connected to trigger -->
-              <div
-                class="absolute top-full pt-2 -mt-2 w-72 bg-white rounded-lg shadow-lg opacity-0 invisible
-                       group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40
-                       border border-gray-200"
+            <!-- Each top-level menu -->
+            <div class="relative" v-for="menu in menus" :key="menu.name">
+              <button
+                @click.stop="toggleDropdown(menu.name)"
+                class="flex items-center text-gray-700 hover:text-blue-800 font-medium transition"
               >
-                <div class="rounded-lg overflow-hidden">
-                  <NuxtLink to="/company/about" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">კომპანია</NuxtLink>
-                  <NuxtLink to="/company/director" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">დირექტორი</NuxtLink>
-                  <NuxtLink to="/company/deputies" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">მოადგილეები</NuxtLink>
-                  <NuxtLink to="/company/vacancies" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ვაკანსია</NuxtLink>
-                  <NuxtLink to="/company/audit" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">აუდირებული ფინანსური ანგარიშება</NuxtLink>
-                  <NuxtLink to="/company/buisness-plan" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ბიზნეს-გეგმა</NuxtLink>
-                  <NuxtLink to="/company/personal" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">პერსონალური ოფიცერი</NuxtLink>
-                  <NuxtLink to="/company/quality" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ხარისხის პოლიტიკა</NuxtLink>
+                {{ menu.label }}
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+              </button>
+
+              <!-- Dropdown panel -->
+              <transition name="dropdown">
+                <div
+                  v-if="openDropdown === menu.name"
+                  class="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                >
+                  <ul class="py-1">
+                    <li v-for="item in menu.items" :key="item.text" class="relative">
+                      <!-- If has children: click to expand submenu -->
+                      <button
+                        v-if="item.children"
+                        @click.stop="toggleSub(menu.name, item.text)"
+                        class="w-full text-left px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 flex justify-between items-center transition"
+                      >
+                        <span>{{ item.text }}</span>
+                        <i
+                          class="fas fa-chevron-down text-xs transition-transform duration-300"
+                          :class="{ 'rotate-180': openSub[menu.name] === item.text }"
+                        ></i>
+                      </button>
+
+                      <!-- If simple link -->
+                      <NuxtLink
+                        v-else
+                        :to="item.to"
+                        class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition"
+                      >
+                        {{ item.text }}
+                      </NuxtLink>
+
+                      <!-- Nested submenu (click-to-open) -->
+                      <transition name="fade">
+                        <ul
+                          v-if="item.children && openSub[menu.name] === item.text"
+                          class="ml-4 border-l border-gray-100"
+                        >
+                          <li v-for="sub in item.children" :key="sub.text" class="pl-4">
+                            <NuxtLink
+                              :to="sub.to"
+                              class="block py-2 text-gray-600 hover:bg-blue-50 hover:text-blue-700 transition"
+                            >
+                              {{ sub.text }}
+                            </NuxtLink>
+                          </li>
+                        </ul>
+                      </transition>
+                    </li>
+                  </ul>
                 </div>
-              </div>
+              </transition>
             </div>
 
-            <!-- მედიაცენტრი (pure hover) -->
-            <div class="relative h-full flex items-center overflow-visible group">
-              <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
-                მედიაცენტრი <i class="fas fa-chevron-down ml-1 text-xs"></i>
-              </button>
-              <div
-                class="absolute top-full pt-2 -mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible
-                       group-hover:opacity-100 group-hover:visible transition-all duration-200 z-40
-                       border border-gray-200"
-              >
-                <div class="rounded-lg overflow-hidden">
-                  <NuxtLink to="/media/photos" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ფოტო გალერია</NuxtLink>
-                  <NuxtLink to="/media/videos" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">ვიდეო გალერია</NuxtLink>
-                  <NuxtLink to="/media/publications" class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">პუბლიკაციები</NuxtLink>
-                </div>
-              </div>
-            </div>
-
-            <!-- პროექტები (JS hover so we can keep it open while moving) -->
-            <div class="relative h-full flex items-center overflow-visible"
-                 @mouseenter="openProjects" @mouseleave="closeProjects">
-              <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
-                პროექტები <i class="fas fa-chevron-down ml-1 text-xs"></i>
-              </button>
-
-              <div v-if="projectsOpen"
-                   class="absolute top-full pt-2 -mt-2 w-72 bg-white rounded-lg shadow-lg z-50 border border-gray-200"
-                   @mouseenter="openProjects" @mouseleave="closeProjects">
-                <ul class="py-1">
-                  <li v-for="child in projectsNav.children" :key="child.text" class="relative"
-                      @mouseenter="openSubmenu = child.text" @mouseleave="openSubmenu = null">
-                    <NuxtLink :to="child.to"
-                              class="flex px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition justify-between items-center">
-                      <span>{{ child.text }}</span>
-                      <i v-if="child.children" class="fas fa-chevron-right ml-2 text-xs text-gray-400"></i>
-                    </NuxtLink>
-
-                    <!-- open nested TO THE LEFT so nothing goes out of bounds -->
-                    <div v-if="child.children && openSubmenu === child.text"
-                         class="absolute right-full top-0 mr-2 w-72 bg-white rounded-lg shadow-lg z-50 border border-gray-200">
-                      <ul class="py-1">
-                        <li v-for="grandchild in child.children" :key="grandchild.text">
-                          <NuxtLink :to="grandchild.to"
-                                    class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">
-                            {{ grandchild.text }}
-                          </NuxtLink>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- ტენდერები (nested opens to the LEFT to avoid overflow) -->
-            <div class="relative h-full flex items-center overflow-visible"
-                 @mouseenter="openTenders" @mouseleave="closeTenders">
-              <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
-                {{ tendersNav.text }} <i class="fas fa-chevron-down ml-1 text-xs"></i>
-              </button>
-
-              <div v-if="tendersOpen"
-                   class="absolute top-full pt-2 -mt-2 w-72 bg-white rounded-lg shadow-lg z-50 border border-gray-200"
-                   @mouseenter="openTenders" @mouseleave="closeTenders">
-                <ul class="py-1">
-                  <li v-for="child in tendersNav.children" :key="child.text" class="relative"
-                      @mouseenter="openTendersSubmenu = child.text" @mouseleave="openTendersSubmenu = null">
-                    <NuxtLink :to="child.to"
-                              class="flex px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition justify-between items-center">
-                      <span>{{ child.text }}</span>
-                      <i v-if="child.children" class="fas fa-chevron-right ml-2 text-xs text-gray-400"></i>
-                    </NuxtLink>
-
-                    <!-- LEFT side submenu to prevent out-of-bounds -->
-                    <div v-if="child.children && openTendersSubmenu === child.text"
-                         class="absolute right-full top-0 mr-2 w-64 bg-white rounded-lg shadow-lg z-50 border border-gray-200">
-                      <ul class="py-1">
-                        <li v-for="grandchild in child.children" :key="grandchild.text">
-                          <NuxtLink :to="grandchild.to"
-                                    class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">
-                            {{ grandchild.text }}
-                          </NuxtLink>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- კანონმდებლობა (no overflow; stays open while moving) -->
-            <div class="relative h-full flex items-center overflow-visible"
-                 @mouseenter="openLegislation" @mouseleave="closeLegislation">
-              <button class="text-gray-700 hover:text-blue-800 font-medium transition flex items-center py-4">
-                {{ legislationNav.text }} <i class="fas fa-chevron-down ml-1 text-xs"></i>
-              </button>
-
-              <div v-if="legislationOpen"
-                   class="absolute top-full pt-2 -mt-2 w-96 bg-white rounded-lg shadow-lg z-50 border border-gray-200"
-                   @mouseenter="openLegislation" @mouseleave="closeLegislation">
-                <ul class="py-1">
-                  <li v-for="item in legislationNav.children" :key="item.text">
-                    <a v-if="item.to.endsWith('.pdf')" :href="item.to" target="_blank" rel="noopener noreferrer"
-                       class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">
-                      {{ item.text }}
-                    </a>
-                    <NuxtLink v-else :to="item.to"
-                              class="block px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">
-                      {{ item.text }}
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
+            <!-- Static link -->
             <NuxtLink
               to="/decree-announcements"
               class="text-gray-700 hover:text-blue-800 font-medium transition"
@@ -198,16 +122,20 @@
               დადგენილების საჯაროდ გამოცხადება
             </NuxtLink>
 
-            <!-- Desktop Auth/Profile -->
+            <!-- Auth/Profile -->
             <div class="ml-4">
-              <button v-if="user"
-                      @click="$router.push('/profile')"
-                      class="bg-gradient-to-r from-blue-800 to-blue-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:from-blue-700 hover:to-blue-500 transition">
+              <button
+                v-if="user"
+                @click="$router.push('/profile')"
+                class="bg-gradient-to-r from-blue-800 to-blue-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:from-blue-700 hover:to-blue-500 transition"
+              >
                 პროფილი — {{ user.name }}
               </button>
-              <button v-else
-                      @click="$router.push('/auth')"
-                      class="bg-gradient-to-r from-blue-800 to-blue-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:from-blue-700 hover:to-blue-500 transition">
+              <button
+                v-else
+                @click="$router.push('/auth')"
+                class="bg-gradient-to-r from-blue-800 to-blue-600 text-white font-semibold px-5 py-2 rounded-xl shadow-md hover:from-blue-700 hover:to-blue-500 transition"
+              >
                 ავტორიზაცია
               </button>
             </div>
@@ -219,96 +147,91 @@
           </button>
         </div>
 
-        <!-- Mobile menu (unchanged, just added last item for auth/profile) -->
+        <!-- Mobile menu (accordion with nested submenus) -->
         <div v-if="isMobileMenuOpen" class="lg:hidden bg-white border-b max-h-[80vh] overflow-y-auto">
           <ul>
+            <!-- მთავარი -->
             <li class="border-t">
-              <NuxtLink to="/" @click="closeMobileMenu" class="block py-3 px-4 text-gray-700 hover:bg-gray-50">მთავარი</NuxtLink>
+              <NuxtLink
+                to="/"
+                @click="closeMobileMenu"
+                class="block py-3 px-4 text-gray-700 hover:bg-gray-50"
+              >
+                მთავარი
+              </NuxtLink>
             </li>
 
-            <li class="border-t">
-              <button @click="toggle('company')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">კომპანია</button>
-              <div :class="['accordion', { open: mobile.company }]">
-                <NuxtLink to="/company/about" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">კომპანია</NuxtLink>
-                <NuxtLink to="/company/director" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">დირექტორი</NuxtLink>
-                <NuxtLink to="/company/deputies" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">მოადგილეები</NuxtLink>
-                <NuxtLink to="/company/vacancies" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">ვაკანსია</NuxtLink>
-                <NuxtLink to="/company/audit" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">აუდირებული ფინანსური ანგარიშება</NuxtLink>
-                <NuxtLink to="/company/buisness-plan" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">ბიზნეს-გეგმა</NuxtLink>
-                <NuxtLink to="/company/personal" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">პერსონალური ოფიცერი</NuxtLink>
-                <NuxtLink to="/company/quality" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">ხარისხის პოლიტიკა</NuxtLink>
-              </div>
-            </li>
+            <!-- Dynamic menus -->
+            <li class="border-t" v-for="menu in menus" :key="menu.name">
+              <button
+                type="button"
+                @click.stop.prevent="toggleMobile(menu.name)"
+                class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50 flex justify-between items-center"
+              >
+                <span>{{ menu.label }}</span>
+                <i
+                  class="fas fa-chevron-down text-xs transition-transform duration-300"
+                  :class="{ 'rotate-180': mobileOpen[menu.name] }"
+                ></i>
+              </button>
 
-            <li class="border-t">
-              <button @click="toggle('media')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">მედიაცენტრი</button>
-              <div :class="['accordion', { open: mobile.media }]">
-                <NuxtLink to="/media/photos" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">ფოტო გალერია</NuxtLink>
-                <NuxtLink to="/media/videos" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">ვიდეო გალერია</NuxtLink>
-                <NuxtLink to="/media/publications" @click="closeMobileMenu" class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">პუბლიკაციები</NuxtLink>
-              </div>
-            </li>
-
-            <li class="border-t">
-              <button @click="toggle('projects')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">პროექტები</button>
-              <div :class="['accordion', { open: mobile.projects }]">
-                <template v-for="section in projectsNav.children" :key="section.text">
-                  <div class="py-2 pl-8 pr-4 text-gray-500 text-sm">{{ section.text }}</div>
-                  <NuxtLink v-for="leaf in (section.children || [])" :key="leaf.text" :to="leaf.to"
-                            @click="closeMobileMenu"
-                            class="block py-3 pl-12 pr-4 text-gray-700 hover:bg-gray-100">
-                    {{ leaf.text }}
-                  </NuxtLink>
-                </template>
-              </div>
-            </li>
-
-            <li class="border-t">
-              <button @click="toggle('tenders')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">ტენდერები</button>
-              <div :class="['accordion', { open: mobile.tenders }]">
-                <template v-for="section in tendersNav.children" :key="section.text">
-                  <div class="py-2 pl-8 pr-4 text-gray-500 text-sm">{{ section.text }}</div>
-                  <NuxtLink v-for="leaf in (section.children || [])" :key="leaf.text" :to="leaf.to"
-                            @click="closeMobileMenu"
-                            class="block py-3 pl-12 pr-4 text-gray-700 hover:bg-gray-100">
-                    {{ leaf.text }}
-                  </NuxtLink>
-                </template>
-              </div>
-            </li>
-
-            <li class="border-t">
-              <button @click="toggle('legislation')" class="w-full text-left py-3 px-4 text-gray-700 hover:bg-gray-50">კანონმდებლობა</button>
-              <div :class="['accordion', { open: mobile.legislation }]">
-                <template v-for="item in legislationNav.children" :key="item.text">
-                  <a v-if="item.to.endsWith('.pdf')" :href="item.to" target="_blank" rel="noopener noreferrer"
-                     @click="closeMobileMenu"
-                     class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">
-                    {{ item.text }}
-                  </a>
-                  <NuxtLink v-else :to="item.to" @click="closeMobileMenu"
-                            class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100">
+              <!-- First-level accordion -->
+              <div :class="['accordion', { open: mobileOpen[menu.name] }]">
+                <template v-for="item in menu.items" :key="item.text">
+                  <!-- If simple link -->
+                  <NuxtLink
+                    v-if="!item.children"
+                    :to="item.to"
+                    @click="closeMobileMenu"
+                    class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100"
+                  >
                     {{ item.text }}
                   </NuxtLink>
-                </template>
 
-                <NuxtLink to="/decree-announcements" @click="closeMobileMenu"
-                          class="block py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100 border-t border-gray-200">
-                  დადგენილების საჯაროდ გამოცხადება
-                </NuxtLink>
+                  <!-- If nested submenu -->
+                  <div v-else class="border-t">
+                    <button
+                      type="button"
+                      @click.stop.prevent="toggleMobileSub(menu.name, item.text)"
+                      class="w-full text-left py-3 pl-8 pr-4 text-gray-700 hover:bg-gray-100 flex justify-between items-center"
+                    >
+                      <span>{{ item.text }}</span>
+                      <i
+                        class="fas fa-chevron-down text-xs transition-transform duration-300"
+                        :class="{ 'rotate-180': mobileSub[menu.name] === item.text }"
+                      ></i>
+                    </button>
+
+                    <div :class="['accordion', { open: mobileSub[menu.name] === item.text }]">
+                      <NuxtLink
+                        v-for="sub in item.children"
+                        :key="sub.text"
+                        :to="sub.to"
+                        @click="closeMobileMenu"
+                        class="block py-3 pl-12 pr-4 text-gray-600 hover:bg-gray-50 hover:text-blue-700"
+                      >
+                        {{ sub.text }}
+                      </NuxtLink>
+                    </div>
+                  </div>
+                </template>
               </div>
             </li>
 
-            <!-- Auth/Profile in MOBILE menu -->
+            <!-- Auth/Profile -->
             <li class="border-t">
-              <button v-if="user"
-                      @click="closeMobileMenu(); $router.push('/profile')"
-                      class="w-full text-left py-3 px-4 text-white bg-blue-600 hover:bg-blue-700">
+              <button
+                v-if="user"
+                @click="closeMobileMenu(); $router.push('/profile')"
+                class="w-full text-left py-3 px-4 text-white bg-blue-600 hover:bg-blue-700"
+              >
                 პროფილი — {{ user.name }}
               </button>
-              <button v-else
-                      @click="closeMobileMenu(); $router.push('/auth')"
-                      class="w-full text-left py-3 px-4 text-white bg-blue-600 hover:bg-blue-700">
+              <button
+                v-else
+                @click="closeMobileMenu(); $router.push('/auth')"
+                class="w-full text-left py-3 px-4 text-white bg-blue-600 hover:bg-blue-700"
+              >
                 ავტორიზაცია
               </button>
             </li>
@@ -317,50 +240,87 @@
       </header>
     </div>
 
-    <!-- Spacer to push content below fixed header -->
+    <!-- Spacer below fixed header -->
     <div class="h-32"></div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { projectsNav } from '../../data/projectsNavigation.js'
 import { tendersNav } from '../../data/tendersNavigation.js'
 import { legislationNav } from '../../data/legislationNavigation.js'
 
-const isMobileMenuOpen = ref(false)
-const projectsOpen = ref(false)
-const tendersOpen = ref(false)
-const legislationOpen = ref(false)
-const openSubmenu = ref(null)
-const openTendersSubmenu = ref(null)
 const user = ref(null)
 
-function openProjects () { projectsOpen.value = true }
-function closeProjects () { projectsOpen.value = false }
-function openTenders () { tendersOpen.value = true }
-function closeTenders () { tendersOpen.value = false }
-function openLegislation () { legislationOpen.value = true }
-function closeLegislation () { legislationOpen.value = false }
+/* Desktop state */
+const openDropdown = ref(null)      // which top dropdown is open
+const openSub = ref({})             // which submenu under each dropdown is open
 
-const mobile = ref({
-  company: false,
-  media: false,
-  projects: false,
-  tenders: false,
-  legislation: false
-})
+/* Mobile state */
+const isMobileMenuOpen = ref(false)
+const mobileOpen = ref({})          // which mobile top section is open
+const mobileSub = ref({})           // which nested section under a mobile top is open
 
-function toggle (key) {
-  mobile.value[key] = !mobile.value[key]
+/* Menus */
+const menus = [
+  {
+    name: 'company',
+    label: 'კომპანია',
+    items: [
+      { text: 'კომპანია', to: '/company/about' },
+      { text: 'დირექტორი', to: '/company/director' },
+      { text: 'მოადგილეები', to: '/company/deputies' },
+      { text: 'ვაკანსია', to: '/company/vacancies' },
+      { text: 'აუდირებული ფინანსური ანგარიშება', to: '/company/audit' },
+      { text: 'ბიზნეს-გეგმა', to: '/company/buisness-plan' },
+      { text: 'პერსონალური ოფიცერი', to: '/company/personal' },
+      { text: 'ხარისხის პოლიტიკა', to: '/company/quality' }
+    ]
+  },
+  {
+    name: 'media',
+    label: 'მედიაცენტრი',
+    items: [
+      { text: 'ფოტო გალერია', to: '/media/photos' },
+      { text: 'ვიდეო გალერია', to: '/media/videos' },
+      { text: 'პუბლიკაციები', to: '/media/publications' }
+    ]
+  },
+  { name: 'projects', label: 'პროექტები', items: projectsNav.children },
+  { name: 'tenders', label: 'ტენდერები', items: tendersNav.children },
+  { name: 'legislation', label: 'კანონმდებლობა', items: legislationNav.children }
+]
+
+/* Desktop handlers */
+function toggleDropdown(name) {
+  openDropdown.value = openDropdown.value === name ? null : name
+  openSub.value = {} // close nested when switching top menu
+}
+function toggleSub(parent, key) {
+  openSub.value[parent] = openSub.value[parent] === key ? null : key
+}
+function handleClickOutside(e) {
+  if (!e.target.closest('nav')) {
+    openDropdown.value = null
+    openSub.value = {}
+  }
 }
 
-function closeMobileMenu () {
+/* Mobile handlers */
+function toggleMobile(name) {
+  mobileOpen.value[name] = !mobileOpen.value[name]
+  mobileSub.value[name] = null
+}
+function toggleMobileSub(parent, key) {
+  mobileSub.value[parent] = mobileSub.value[parent] === key ? null : key
+}
+function closeMobileMenu() {
   isMobileMenuOpen.value = false
 }
 
 onMounted(() => {
-  // read user once for header buttons (keeps your existing auth localStorage schema)
+  document.addEventListener('click', handleClickOutside)
   try {
     const raw = localStorage.getItem('user')
     if (raw) {
@@ -369,10 +329,19 @@ onMounted(() => {
     }
   } catch {}
 })
+onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
 </script>
 
 <style scoped>
-/* small helper so accordion opens/collapses smoothly */
+/* Mobile accordion smoothness */
 .accordion { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
-.accordion.open { max-height: 1200px; }
+.accordion.open { max-height: 1000px; }
+
+/* Desktop dropdown animation */
+.dropdown-enter-active, .dropdown-leave-active { transition: all .25s ease; }
+.dropdown-enter-from, .dropdown-leave-to { opacity: 0; transform: translateY(-10px); }
+
+/* Nested submenu animation */
+.fade-enter-active, .fade-leave-active { transition: all .25s ease; }
+.fade-enter-from, .fade-leave-to { opacity: 0; transform: translateY(-6px); }
 </style>
