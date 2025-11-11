@@ -13,6 +13,12 @@
             </a>
           </div>
           <div class="flex float-center space-x-4">
+            <NuxtLink
+                to="/decree-announcements"
+                class="text-red-500 sm-hidden hover:text-red-600 font-medium transition"
+            >
+              დადგენილების საჯაროდ გამოცხადება
+            </NuxtLink>
             <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
             <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-youtube"></i></a>
@@ -27,7 +33,7 @@
         <div class="container mx-auto flex justify-between items-center py-2 px-4 md:hidden">
           <div class="flex items-center space-x-6">
             <a href="tel:2930000" class="flex items-center">
-              <i class="fas fa-phone text-green-500 mr-2"></i> ცხელი ხაზი: 2 93 00 00
+              <i class="fas fa-phone text-green-500 mr-2"></i> ცხელი ხაზი: <br> 2 93 00 00
             </a>
             <a href="mailto:info@water.gov.ge" class="flex items-center">
               <i class="fas fa-envelope text-green-500 mr-2"></i> info@water.gov.ge
@@ -115,12 +121,12 @@
             </div>
 
             <!-- Static link -->
-            <NuxtLink
-              to="/decree-announcements"
-              class="text-gray-700 hover:text-blue-800 font-medium transition"
-            >
-              დადგენილების საჯაროდ გამოცხადება
-            </NuxtLink>
+<!--            <NuxtLink-->
+<!--              to="/decree-announcements"-->
+<!--              class="text-red-500 hover:text-red-600 font-medium transition"-->
+<!--            >-->
+<!--              დადგენილების საჯაროდ გამოცხადება-->
+<!--            </NuxtLink>-->
 
             <!-- Auth/Profile -->
             <div class="ml-4">

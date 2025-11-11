@@ -2,19 +2,18 @@
   <div>
     <footer class="bg-gray-900 text-white pt-16 pb-8">
       <div class="container-fluid mx-auto px-4">
-        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div class="grid md:grid-cols-2  lg:grid-cols-5 gap-8 mb-12">
           
           <div>
 
             <div class="relative">
               <div class="relative">
-                <div class="absolute inset-0 gradient-primary opacity-10 rounded-3xl transform rotate-6"></div>
                 <div class="relative bg-white rounded-3xl shadow-2xl p-2">
                   <NuxtLink to="/" >
                     <img 
                       src="/wlogo.png" 
                       alt="Company Logo"
-                      class="h-14 w-auto"
+                      class="w-auto"
                     >
                   </NuxtLink>
                 </div>
