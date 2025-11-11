@@ -3,19 +3,19 @@
     <div class="fixed top-0 left-0 w-full z-50 overflow-visible">
       <!-- Topbar (desktop) -->
       <div class="bg-[#0d1321] text-white text-sm">
-        <div class="container-fluid mx-auto flex justify-between py-2 px-4 hidden md:flex">
+        <div class="container-fluid mx-auto h-11  justify-between items-center py-2 px-4 hidden md:flex">
           <div class="flex items-center space-x-6">
-            <a href="tel:2930000" class="flex items-center hover:text-green-400 transition">
+            <a href="tel:2930000" class="flex items-center hover:text-blue-400 transition">
               <i class="fas fa-phone text-green-500 mr-2"></i> ცხელი ხაზი: 2 93 00 00
             </a>
-            <a href="mailto:info@water.gov.ge" class="flex items-center hover:text-green-400 transition">
+            <a href="mailto:info@water.gov.ge" class="flex items-center hover:text-blue-400 transition">
               <i class="fas fa-envelope text-green-500 mr-2"></i> info@water.gov.ge
             </a>
           </div>
           <div class="flex float-center space-x-4">
             <NuxtLink
                 to="/decree-announcements"
-                class="text-red-500 sm-hidden hover:text-red-600 font-medium transition"
+                class="text-red-500 sm-hidden hover:text-red-400 text-sm transition font-medium"
             >
               დადგენილების საჯაროდ გამოცხადება
             </NuxtLink>
