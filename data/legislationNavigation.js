@@ -3,27 +3,27 @@ export const legislationNav = {
   children: [
     {
       text: 'კომპანიის დებულება',
-      to: '/legislation/pdfs/company-bylaws.pdf' 
+      href: '/legislation/pdfs/company-bylaws.pdf'
     },
     {
       text: '"მომსახურების ხარისხის წესების შესახებ" დადგენილების შესახებ - საქართველოს ენერგეტიკისა და წყალმომარაგების მარეგულირებელი ეროვნული კომისიის 2021 წლის 28 ივნისის №20 დადგენილება',
-      to: '/legislation/pdfs/xarisxi.pdf' 
+      href: '/legislation/pdfs/xarisxi.pdf'
     },
     {
       text: '"სასმელი წყლის მიწოდებისა და მოხმარების წესების შესახებ" დადგენილების შესახებ - საქართველოს ენერგეტიკისა და წყალმომარაგების მარეგულირებელი ეროვნული კომისიის 2008 წლის 26 ნოემბრის №32 დადგენილება',
-      to: '/legislation/pdfs/sasmeli-wyali.pdf' 
+      href: '/legislation/pdfs/sasmeli-wyali.pdf'
     },
     {
       text: 'კომპანიის წესდება',
-      to: '/legislation/pdfs/wesdeba.pdf' 
+      href: '/legislation/pdfs/wesdeba.pdf'
     },
     {
       text: 'წყლის სტანდარტები',
-      to: '/legislation/pdfs/water-standards.pdf' 
+      href: '/legislation/pdfs/water-standards.pdf'
     },
     {
       text: 'უსაფრთხოების პროტოკოლები, ხარჯთაღრიცხვები და ანგარიშგებები',
-      to: '/legislation/' 
+      to: '/legislation' // this one stays internal — not a PDF
     },
   ]
 };
