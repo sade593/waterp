@@ -267,6 +267,9 @@ const menus = [
       { text: "ბიზნეს-გეგმა", to: "/company/buisness-plan" },
       { text: "პერსონალური ოფიცერი", to: "/company/personal" },
       { text: "ხარისხის პოლიტიკა", to: "/company/quality" },
+      { text: 'ოპერირების არეალი', to: '/company/operation-area' }
+
+
     ],
   },
   {
