@@ -292,6 +292,7 @@ body {
   transform: translateY(-6px);
 }
 /* Overlay */
+/* Overlay */
 .popup-overlay {
   position: fixed;
   inset: 0;
@@ -300,36 +301,33 @@ body {
   z-index: 9999;
 }
 
-/* Container */
+/* Core box */
 .popup-container {
   background: #ffffff;
   border-radius: 18px;
   max-width: 900px;
   width: 100%;
-  padding: 25px 35px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  padding: 35px;
   animation: fadeIn 0.25s ease-out;
 }
 
-/* Close button */
-.popup-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  color: #666;
+/* REMOVE grey outer border */
+.popup-container,
+.popup-overlay {
+  box-shadow: none !important;
 }
 
+/* Header white top section */
 .popup-header {
-  background: #143987;
-  color: white;
-  padding: 18px 24px;
-  border-radius: 14px;
-  margin-bottom: 25px;
+  background: #ffffff;     /* changed */
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 12px;
 }
 
 .popup-title {
   font-size: 22px;
   font-weight: 700;
+  color: #14213d;
 }
 
 .popup-logo {
@@ -337,13 +335,7 @@ body {
   width: auto;
 }
 
-.popup-subtitle {
-  font-size: 17px;
-  font-weight: 600;
-  color: #222;
-}
-
-/* Buttons & fields */
+/* Buttons */
 .popup-btn-primary {
   background: #0b5ed7;
   color: white;
@@ -354,7 +346,7 @@ body {
 }
 
 .popup-btn-secondary {
-  background: #f1f4f8;
+  background: #eef2ff;
   color: #1e3a8a;
   padding: 12px 20px;
   border-radius: 12px;
@@ -363,51 +355,40 @@ body {
 }
 
 .popup-mail {
-  border: 1px solid #ccc;
+  border: 1px solid #dcdcdc;
   padding: 12px;
   border-radius: 10px;
   display: block;
+  text-align: center;
   font-weight: 600;
 }
 
-/* Contact rows */
+/* Right box */
 .popup-right {
-  background: #f7f9fd;
-  padding: 20px;
+  background: #f9f9f9;
+  padding: 22px;
   border-radius: 15px;
 }
 
-.popup-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.popup-row i {
-  color: #0b5ed7;
+/* Close button */
+.popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 20px;
+  color: #666;
 }
 
 /* Footer */
 .popup-footer {
-  margin-top: 25px;
+  margin-top: 28px;
   font-size: 13px;
   text-align: center;
-  color: #777;
+  color: #636363;
 }
 
 /* Animation */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.94);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
-
-
-@tailwind utilities;
