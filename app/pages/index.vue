@@ -1,4 +1,10 @@
 <template>
+  <template>
+  <div>
+    <PopupModal />
+    
+  </div>
+</template>
   <!-- Hero Section -->
   <section class="relative bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden">
     <!-- Background Pattern -->
@@ -606,6 +612,7 @@
 
 <script>
 import '~/assets/css/main.css'
+import PopupModal from "@/components/PopupModal.vue";
 </script>
 
 <style>
