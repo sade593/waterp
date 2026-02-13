@@ -81,28 +81,28 @@
                         <i class="dropdown-chevron fas fa-chevron-down" :class="{ 'chevron-rotate': openSub[menu.name] === item.text }"></i>
                       </button>
 
-                      <a v-else-if="item.href" :href="item.href" target="_blank" rel="noopener noreferrer" class="dropdown-item-link">
+                      <a v-else-if="item.href" :href="item.href" target="_blank" rel="noopener noreferrer" @click="closeDropdown" class="dropdown-item-link">
                         {{ item.text }}
                       </a>
 
-                      <a v-else-if="item.to && item.to.endsWith('.pdf')" :href="item.to" target="_blank" rel="noopener noreferrer" class="dropdown-item-link">
+                      <a v-else-if="item.to && item.to.endsWith('.pdf')" :href="item.to" target="_blank" rel="noopener noreferrer" @click="closeDropdown" class="dropdown-item-link">
                         {{ item.text }}
                       </a>
 
-                      <NuxtLink v-else-if="item.to" :to="item.to" class="dropdown-item-link">
+                      <NuxtLink v-else-if="item.to" :to="item.to" @click="closeDropdown" class="dropdown-item-link">
                         {{ item.text }}
                       </NuxtLink>
 
                       <transition name="fade">
                         <ul v-if="item.children && openSub[menu.name] === item.text" class="dropdown-submenu">
                           <li v-for="sub in item.children" :key="sub.text" class="pl-4">
-                            <a v-if="sub.href" :href="sub.href" target="_blank" rel="noopener noreferrer" class="dropdown-subitem-link">
+                            <a v-if="sub.href" :href="sub.href" target="_blank" rel="noopener noreferrer" @click="closeDropdown" class="dropdown-subitem-link">
                               {{ sub.text }}
                             </a>
-                            <a v-else-if="sub.to && sub.to.endsWith('.pdf')" :href="sub.to" target="_blank" rel="noopener noreferrer" class="dropdown-subitem-link">
+                            <a v-else-if="sub.to && sub.to.endsWith('.pdf')" :href="sub.to" target="_blank" rel="noopener noreferrer" @click="closeDropdown" class="dropdown-subitem-link">
                               {{ sub.text }}
                             </a>
-                            <NuxtLink v-else :to="sub.to" class="dropdown-subitem-link">{{ sub.text }}</NuxtLink>
+                            <NuxtLink v-else :to="sub.to" @click="closeDropdown" class="dropdown-subitem-link">{{ sub.text }}</NuxtLink>
                           </li>
                         </ul>
                       </transition>
@@ -273,10 +273,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
+import { ref, watch, onMounted, onBeforeUnmount, nextTick } from "vue";
+import { useRoute } from "vue-router";
 import { projectsNav } from "../../data/projectsNavigation.js";
 import { tendersNav } from "../../data/tendersNavigation.js";
 import { legislationNav } from "../../data/legislationNavigation.js";
+
+const route = useRoute();
 
 const user = ref(null);
 const openDropdown = ref(null);
@@ -315,6 +318,15 @@ function toggleDropdown(name) {
 function toggleSub(parent, key) {
   openSub.value[parent] = openSub.value[parent] === key ? null : key;
 }
+function closeDropdown() {
+  openDropdown.value = null;
+  openSub.value = {};
+}
+
+watch(() => route.fullPath, () => {
+  closeDropdown();
+  closeMobileMenu();
+});
 function handleClickOutside(e) {
   const insideNav = !!e.target.closest("nav");
   const insideMobile = mobileMenu.value && mobileMenu.value.contains(e.target);
